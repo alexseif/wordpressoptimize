@@ -1,0 +1,23 @@
+<?php
+/**
+ * Title: Trust Section
+ * Slug: wpopt/trust-section
+ * Categories: wpopt
+ */
+?>
+<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"6rem","bottom":"6rem"}}},"backgroundColor":"background","layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignfull has-background-background-color has-background" style="padding-top:6rem;padding-bottom:6rem">
+	<!-- wp:heading {"textAlign":"center","level":2,"style":{"spacing":{"margin":{"bottom":"3rem"}}}} -->
+	<h2 class="wp-block-heading has-text-align-center" style="margin-bottom:3rem">Trust</h2>
+	<!-- /wp:heading -->
+	
+	<!-- wp:group {"layout":{"type":"constrained","contentSize":"800px"}} -->
+	<div class="wp-block-group">
+		<!-- wp:paragraph {"align":"center","style":{"color":{"text":"var:preset|color|foreground-light"}}} -->
+		<p class="has-text-align-center has-foreground-light-color has-text-color">Testimonials and client logos will be displayed here.</p>
+		<!-- /wp:paragraph -->
+	</div>
+	<!-- /wp:group -->
+</div>
+<!-- /wp:group -->
+

@@ -1,0 +1,115 @@
+@import 'variables';
+
+// Buttons
+.wp-block-button__link {
+	background-color: $color-primary;
+	color: #FFFFFF;
+	padding: $spacing-md $spacing-lg;
+	border-radius: $radius-md;
+	text-decoration: none;
+	font-weight: $font-weight-medium;
+	display: inline-block;
+	transition: all $transition-base;
+	border: 2px solid transparent;
+	font-size: 1rem;
+	line-height: 1.5;
+	cursor: pointer;
+	box-shadow: $shadow-sm;
+
+	&:hover {
+		background-color: $color-primary-light;
+		transform: translateY(-1px);
+		box-shadow: $shadow-md;
+		color: #FFFFFF;
+	}
+
+	&:active {
+		transform: translateY(0);
+	}
+}
+
+.wp-block-button.is-style-outline .wp-block-button__link {
+	background-color: transparent;
+	border: 2px solid $color-primary;
+	color: $color-primary;
+	box-shadow: none;
+
+	&:hover {
+		background-color: $color-primary;
+		color: #FFFFFF;
+		transform: translateY(-1px);
+		box-shadow: $shadow-md;
+	}
+}
+
+// Service Cards
+.wp-block-group.is-style-service-card {
+	background: $color-background;
+	border: 1px solid $color-border;
+	border-radius: $radius-lg;
+	padding: $spacing-xl;
+	transition: all $transition-base;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	overflow: hidden;
+
+	&::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		height: 4px;
+		background: linear-gradient(90deg, $color-primary, $color-accent);
+		opacity: 0;
+		transition: opacity $transition-base;
+	}
+
+	&:hover {
+		box-shadow: $shadow-lg;
+		transform: translateY(-4px);
+		border-color: $color-accent;
+
+		&::before {
+			opacity: 1;
+		}
+	}
+}
+
+// Header
+.wp-block-group:has(.wp-block-site-title) {
+	border-bottom: 1px solid $color-border;
+	background: $color-background;
+	position: sticky;
+	top: 0;
+	z-index: 100;
+	backdrop-filter: blur(10px);
+	background-color: rgba(255, 255, 255, 0.95);
+}
+
+// Navigation
+.wp-block-navigation {
+	.wp-block-navigation-item {
+		a {
+			color: $color-foreground;
+			font-weight: $font-weight-medium;
+			padding: $spacing-sm $spacing-md;
+			border-radius: $radius-sm;
+			transition: all $transition-base;
+
+			&:hover {
+				background-color: $color-background-alt;
+				color: $color-primary;
+			}
+		}
+	}
+}
+
+// Footer
+footer.wp-block-group {
+	background-color: $color-background-alt;
+	border-top: 1px solid $color-border;
+}
+

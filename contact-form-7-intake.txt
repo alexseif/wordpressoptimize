@@ -1,0 +1,53 @@
+Contact Form 7 Intake Form
+===========================
+
+To create the intake form:
+1. Install Contact Form 7 plugin if not already installed
+2. Go to Contact > Add New
+3. Copy the form code below into the form editor
+4. Set the mail settings as shown below
+5. Save the form and note the form ID
+6. Update the shortcode in templates/page-intake.html with the correct form ID
+
+FORM CODE:
+----------
+<div class="wpopt-intake-form">
+<p><label> Name (required)<br />
+    [text* your-name] </label></p>
+
+<p><label> Business / Clinic name<br />
+    [text business-name] </label></p>
+
+<p><label> Website URL OR Instagram link<br />
+    [url website-url] </label></p>
+
+<p><label> Phone<br />
+    [tel phone] </label></p>
+
+<p><label> Email (required)<br />
+    [email* your-email] </label></p>
+
+<p><label> Message<br />
+    [textarea message] </label></p>
+
+<p>[submit "Submit"]</p>
+</div>
+
+MAIL SETTINGS:
+-------------
+To: info@alexseif.com
+From: [your-name] <[your-email]>
+Subject: New Website Intake Form Submission
+
+Message Body:
+From: [your-name] <[your-email]>
+Business/Clinic: [business-name]
+Website/Instagram: [website-url]
+Phone: [phone]
+
+Message:
+[message]
+
+--
+This email was sent from the intake form on your WordPress site.
+

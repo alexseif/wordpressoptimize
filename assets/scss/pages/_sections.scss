@@ -1,0 +1,80 @@
+@import '../base/variables';
+
+// About Section
+.about-section {
+	.about-stats {
+		border-radius: $radius-xl;
+		box-shadow: $shadow-md;
+
+		.wp-block-heading {
+			font-size: 2.5rem;
+			font-weight: $font-weight-bold;
+			color: $color-primary;
+			margin-bottom: $spacing-sm;
+		}
+
+		.wp-block-paragraph {
+			font-size: 1rem;
+			margin-bottom: 0;
+		}
+	}
+}
+
+// Contact Section
+.contact-section {
+	.contact-info,
+	.contact-cta {
+		border-radius: $radius-xl;
+		box-shadow: $shadow-md;
+		border: 1px solid $color-border;
+		transition: all $transition-base;
+
+		&:hover {
+			box-shadow: $shadow-lg;
+			transform: translateY(-2px);
+		}
+	}
+
+	.contact-info {
+		a {
+			color: $color-primary;
+			font-weight: $font-weight-medium;
+
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+}
+
+// Intake Form Section
+.intake-form-section {
+	scroll-margin-top: 100px; // For smooth scroll offset
+	position: relative;
+	
+	&::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		height: 1px;
+		background: linear-gradient(90deg, transparent, $color-border, transparent);
+	}
+}
+
+// Smooth scroll behavior
+html {
+	scroll-behavior: smooth;
+}
+
+// Smooth scroll for anchor links
+a[href^="#"] {
+	scroll-behavior: smooth;
+	transition: all $transition-base;
+	
+	&:hover {
+		text-decoration: underline;
+	}
+}
+

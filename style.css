@@ -1,0 +1,27 @@
+/*
+Theme Name: wpopt
+Theme URI: https://wordpressoptimize.com/
+Author: WP Optimize Team
+Author URI: https://wordpressoptimize.com/
+Description: WordPress Services & Care – Made for businesses that depend on their website
+Version: 1.0.0
+Requires at least: 6.0
+Tested up to: 6.4
+Requires PHP: 7.4
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: wpopt
+Tags: block-theme, full-site-editing, business
+*/
+
+/*
+ * This theme uses SCSS for styling.
+ * Main styles are compiled from assets/scss/main.scss to assets/css/style.css
+ * 
+ * To modify styles:
+ * 1. Edit files in assets/scss/
+ * 2. Run: npm run sass (or npm run sass:watch for auto-compilation)
+ * 3. Styles are automatically enqueued via functions.php
+ * 
+ * Colors and spacing can also be customized via theme.json
+ */

@@ -1,0 +1,65 @@
+@import '../base/variables';
+
+// Responsive Design
+@media (max-width: $breakpoint-md) {
+	:root {
+		--wp--preset--spacing--section: #{$spacing-2xl};
+	}
+
+	.wp-block-group.is-style-container {
+		padding-left: $spacing-md;
+		padding-right: $spacing-md;
+	}
+
+	.wp-block-columns {
+		flex-direction: column;
+		gap: $spacing-md;
+	}
+
+	.wp-block-button__link {
+		width: 100%;
+		text-align: center;
+	}
+
+	.wpcf7 {
+		padding: $spacing-lg;
+	}
+
+	h1 {
+		font-size: clamp(1.75rem, 6vw, 2.5rem);
+	}
+
+	h2 {
+		font-size: clamp(1.5rem, 5vw, 2rem);
+	}
+
+	.hero-section {
+		padding-top: $spacing-4xl;
+		padding-bottom: $spacing-4xl;
+		min-height: 70vh;
+	}
+
+	h1 {
+		font-size: clamp(2rem, 7vw, 3.5rem);
+	}
+
+	h2 {
+		font-size: clamp(1.75rem, 6vw, 2.75rem);
+	}
+}
+
+@media (max-width: $breakpoint-sm) {
+	.wp-block-group:has(.wp-block-site-title) {
+		padding: $spacing-sm $spacing-md;
+	}
+
+	.wp-block-navigation {
+		flex-direction: column;
+	}
+
+	.hero-badge {
+		font-size: 0.75rem;
+		padding: $spacing-xs $spacing-sm;
+	}
+}
+

@@ -1,0 +1,54 @@
+@import '../base/variables';
+
+// Buttons
+.wp-block-button__link {
+	background-color: $color-primary;
+	color: #FFFFFF;
+	padding: $spacing-md $spacing-lg;
+	border-radius: $radius-md;
+	text-decoration: none;
+	font-weight: $font-weight-medium;
+	display: inline-block;
+	transition: all $transition-base;
+	border: 2px solid transparent;
+	font-size: 1rem;
+	line-height: 1.5;
+	cursor: pointer;
+	box-shadow: $shadow-sm;
+
+	&:hover {
+		background-color: $color-primary-light;
+		transform: translateY(-1px);
+		box-shadow: $shadow-md;
+		color: #FFFFFF;
+	}
+
+	&:focus {
+		outline: 2px solid $color-accent;
+		outline-offset: 2px;
+	}
+
+	&:active {
+		transform: translateY(0);
+	}
+}
+
+.wp-block-button.is-style-outline .wp-block-button__link {
+	background-color: transparent;
+	border: 2px solid $color-primary;
+	color: $color-primary;
+	box-shadow: none;
+
+	&:hover {
+		background-color: $color-primary;
+		color: #FFFFFF;
+		transform: translateY(-1px);
+		box-shadow: $shadow-md;
+	}
+
+	&:focus {
+		outline: 2px solid $color-accent;
+		outline-offset: 2px;
+	}
+}
+

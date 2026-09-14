@@ -1,0 +1,29 @@
+@import '../base/variables';
+
+// Case Study Cards
+.case-study-card {
+	background: $color-background;
+	border: 1px solid $color-border;
+	border-radius: $radius-xl;
+	transition: all $transition-slow;
+	height: 100%;
+	box-shadow: $shadow-sm;
+
+	&:hover {
+		box-shadow: $shadow-lg;
+		transform: translateY(-4px);
+		border-color: $color-accent;
+	}
+
+	.wp-block-heading {
+		font-size: 1.5rem;
+		font-weight: $font-weight-semibold;
+		margin-bottom: $spacing-md;
+	}
+
+	.wp-block-paragraph {
+		font-size: 1rem;
+		line-height: 1.7;
+	}
+}
+

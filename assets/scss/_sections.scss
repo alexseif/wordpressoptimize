@@ -1,0 +1,204 @@
+@import 'variables';
+
+// Hero Section
+.hero-section,
+.wp-block-group:has(.wp-block-heading:first-child) {
+	&.alignfull {
+		background: linear-gradient(135deg, $color-background 0%, $color-background-alt 100%);
+		position: relative;
+		overflow: hidden;
+
+		&::before {
+			content: '';
+			position: absolute;
+			top: -50%;
+			right: -20%;
+			width: 600px;
+			height: 600px;
+			background: radial-gradient(circle, rgba(10, 77, 104, 0.05) 0%, transparent 70%);
+			border-radius: 50%;
+		}
+
+		&::after {
+			content: '';
+			position: absolute;
+			bottom: -30%;
+			left: -10%;
+			width: 500px;
+			height: 500px;
+			background: radial-gradient(circle, rgba(148, 210, 189, 0.08) 0%, transparent 70%);
+			border-radius: 50%;
+		}
+	}
+}
+
+// Problems Section
+.problem-item {
+	background: $color-background;
+	border: 1px solid $color-border;
+	border-radius: $radius-lg;
+	transition: all $transition-base;
+	text-align: center;
+
+	&:hover {
+		box-shadow: $shadow-md;
+		transform: translateY(-4px);
+		border-color: $color-error;
+	}
+
+	.wp-block-heading {
+		color: $color-foreground;
+		font-size: 1.25rem;
+	}
+}
+
+// Services Section
+.wp-block-columns.alignwide {
+	gap: $spacing-lg;
+
+	.wp-block-column {
+		.wp-block-group {
+			background: $color-background;
+			border: 1px solid $color-border;
+			border-radius: $radius-lg;
+			padding: $spacing-xl;
+			transition: all $transition-base;
+			height: 100%;
+			position: relative;
+			overflow: hidden;
+
+			&::before {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				height: 4px;
+				background: linear-gradient(90deg, $color-primary, $color-accent);
+				opacity: 0;
+				transition: opacity $transition-base;
+			}
+
+			&:hover {
+				box-shadow: $shadow-xl;
+				transform: translateY(-6px);
+				border-color: $color-accent;
+
+				&::before {
+					opacity: 1;
+				}
+			}
+
+			.wp-block-heading {
+				color: $color-primary;
+				margin-bottom: $spacing-md;
+			}
+
+			.wp-block-paragraph {
+				&:first-of-type {
+					font-size: 1.5rem;
+					font-weight: $font-weight-bold;
+					color: $color-foreground;
+					margin-bottom: $spacing-xs;
+				}
+
+				&:last-of-type {
+					color: $color-foreground-light;
+					font-size: 1rem;
+				}
+			}
+		}
+	}
+}
+
+// Service Card Images
+.service-card-image {
+	width: 100%;
+	height: 200px;
+	object-fit: cover;
+	border-radius: $radius-md;
+	margin-bottom: $spacing-md;
+	background: linear-gradient(135deg, $color-primary 0%, $color-accent 100%);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 4rem;
+	color: white;
+	opacity: 0.9;
+}
+
+// How It Works Section
+.step-item {
+	background: $color-background;
+	border: 1px solid $color-border;
+	border-radius: $radius-lg;
+	transition: all $transition-base;
+	text-align: center;
+	position: relative;
+
+	&:hover {
+		box-shadow: $shadow-lg;
+		transform: translateY(-4px);
+		border-color: $color-accent;
+	}
+
+	.wp-block-heading {
+		font-size: 2rem;
+		color: $color-primary;
+	}
+}
+
+.wp-block-columns:has(.step-item) {
+	.wp-block-column {
+		position: relative;
+
+		&::after {
+			content: '→';
+			position: absolute;
+			top: 50%;
+			right: -$spacing-md;
+			transform: translateY(-50%);
+			color: $color-accent;
+			font-size: 2rem;
+			font-weight: $font-weight-bold;
+
+			@media (max-width: $breakpoint-md) {
+				display: none;
+			}
+		}
+
+		&:last-child::after {
+			display: none;
+		}
+	}
+}
+
+// Trust Section
+.wp-block-group:has-text("Trust") {
+	.wp-block-paragraph {
+		font-size: 1.125rem;
+	}
+}
+
+// Final CTA Section
+.wp-block-group:has-text("Not sure where to start?") {
+	background: linear-gradient(135deg, $color-primary 0%, $color-primary-light 100%);
+	color: white;
+
+	.wp-block-heading,
+	.wp-block-paragraph {
+		color: white;
+	}
+
+	.wp-block-button__link {
+		background-color: white;
+		color: $color-primary;
+		border-color: white;
+
+		&:hover {
+			background-color: $color-background-alt;
+			color: $color-primary;
+		}
+	}
+}
+

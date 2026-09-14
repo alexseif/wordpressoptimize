@@ -1,0 +1,82 @@
+@import 'variables';
+
+// CSS Variables for theme.json compatibility
+:root {
+	--wp--preset--color--primary: #{$color-primary};
+	--wp--preset--color--accent: #{$color-accent};
+	--wp--preset--color--background: #{$color-background};
+	--wp--preset--color--background-alt: #{$color-background-alt};
+	--wp--preset--color--foreground: #{$color-foreground};
+	--wp--preset--color--foreground-light: #{$color-foreground-light};
+	--wp--preset--spacing--section: #{$spacing-3xl};
+	--wp--preset--spacing--container: #{$container-max-width};
+	--wp--preset--font-family--sans: #{$font-family-sans};
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: $font-family-sans;
+	color: $color-foreground;
+	line-height: 1.6;
+	margin: 0;
+	padding: 0;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+// Typography
+h1, h2, h3, h4, h5, h6 {
+	font-family: $font-family-sans;
+	font-weight: $font-weight-semibold;
+	line-height: 1.2;
+	margin-top: 0;
+	color: $color-foreground;
+	letter-spacing: -0.02em;
+}
+
+h1 {
+	font-size: clamp(2rem, 5vw, 3.5rem);
+	font-weight: $font-weight-bold;
+}
+
+h2 {
+	font-size: clamp(1.75rem, 4vw, 2.5rem);
+}
+
+h3 {
+	font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+p {
+	margin-top: 0;
+	margin-bottom: $spacing-md;
+}
+
+// Links
+a {
+	color: $color-primary;
+	text-decoration: none;
+	transition: color $transition-base;
+
+	&:hover {
+		color: $color-primary-light;
+	}
+}
+
+// Container
+.wp-block-group.is-style-container {
+	max-width: $container-max-width;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: $container-padding;
+	padding-right: $container-padding;
+}
+
+// Section Spacing
+.wp-block-group.is-style-section {
+	padding-block: $spacing-3xl;
+}
+

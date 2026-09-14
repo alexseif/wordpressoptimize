@@ -1,0 +1,94 @@
+@import '../base/variables';
+
+// Service Cards (WP Engine inspired)
+.service-card {
+	background: $color-background;
+	border: 1px solid $color-border;
+	border-radius: $radius-xl;
+	transition: all $transition-slow;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	overflow: hidden;
+	box-shadow: $shadow-sm;
+
+	&::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		height: 4px;
+		background: linear-gradient(90deg, $color-primary, $color-accent);
+		opacity: 0;
+		transition: opacity $transition-base;
+	}
+
+	&:hover {
+		box-shadow: $shadow-xl;
+		transform: translateY(-8px);
+		border-color: $color-accent;
+
+		&::before {
+			opacity: 1;
+		}
+
+		.service-card-image img {
+			transform: scale(1.08);
+		}
+	}
+}
+
+.service-card-image {
+	width: 100%;
+	height: 220px;
+	object-fit: cover;
+	border-radius: $radius-lg;
+	margin-bottom: $spacing-lg;
+	background: linear-gradient(135deg, $color-primary 0%, $color-accent 100%);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+	position: relative;
+
+	&::after {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.1) 100%);
+		opacity: 0;
+		transition: opacity $transition-base;
+	}
+
+	img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		border-radius: $radius-lg;
+		transition: transform $transition-slow;
+	}
+}
+
+.service-card:hover .service-card-image {
+	&::after {
+		opacity: 1;
+	}
+}
+
+.service-price {
+	font-size: 1.75rem;
+	font-weight: $font-weight-bold;
+	color: $color-foreground;
+	margin-bottom: $spacing-xs;
+	line-height: 1.2;
+
+	strong {
+		font-size: 1.75rem;
+	}
+}
+

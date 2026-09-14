@@ -1,0 +1,58 @@
+@import '../base/variables';
+
+// Step Items (How It Works) - WP Engine style
+.step-item {
+	background: $color-background;
+	border: 1px solid $color-border;
+	border-radius: $radius-xl;
+	transition: all $transition-slow;
+	text-align: center;
+	position: relative;
+	padding: $spacing-xl;
+	box-shadow: $shadow-sm;
+
+	&:hover {
+		box-shadow: $shadow-xl;
+		transform: translateY(-6px);
+		border-color: $color-accent;
+	}
+
+	.wp-block-heading {
+		font-size: 2.5rem;
+		color: $color-primary;
+		margin-bottom: $spacing-md;
+		font-weight: $font-weight-bold;
+	}
+
+	.wp-block-paragraph {
+		font-size: 1.125rem;
+		line-height: 1.7;
+	}
+}
+
+.wp-block-columns:has(.step-item) {
+	.wp-block-column {
+		position: relative;
+
+		&::after {
+			content: '→';
+			position: absolute;
+			top: 50%;
+			right: -$spacing-md;
+			transform: translateY(-50%);
+			color: $color-accent;
+			font-size: 2rem;
+			font-weight: $font-weight-bold;
+			z-index: 1;
+
+			@media (max-width: $breakpoint-md) {
+				display: none;
+			}
+		}
+
+		&:last-child::after {
+			display: none;
+		}
+	}
+}
+

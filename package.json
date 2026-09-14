@@ -1,0 +1,13 @@
+{
+  "name": "wpopt-theme",
+  "version": "1.0.0",
+  "description": "WordPress Optimize Theme",
+  "scripts": {
+    "sass": "sass assets/scss/main.scss assets/css/style.css --style=expanded",
+    "sass:watch": "sass --watch assets/scss/main.scss:assets/css/style.css --style=expanded",
+    "sass:compressed": "sass assets/scss/main.scss assets/css/style.css --style=compressed"
+  },
+  "devDependencies": {
+    "sass": "^1.69.0"
+  }
+}
