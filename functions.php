@@ -38,12 +38,12 @@ add_action('after_setup_theme', 'wpopt_setup');
  */
 function wpopt_enqueue_assets()
 {
-	// Enqueue Inter font from Google Fonts
+	// Enqueue Plus Jakarta Sans & Inter fonts from Google Fonts
 	wp_enqueue_style(
 		'wpopt-fonts',
-		'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap',
+		'https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap',
 		array(),
-		'1.0.0'
+		'1.0.1'
 	);
 
 	// Enqueue compiled SCSS styles

@@ -17,13 +17,13 @@
             "palette": [
                 {
                     "slug": "primary",
-                    "color": "#0F172A",
-                    "name": "Deep Tech Navy"
+                    "color": "#090D16",
+                    "name": "Deep Carbon"
                 },
                 {
                     "slug": "accent",
-                    "color": "#0284C7",
-                    "name": "Electric Performance Blue"
+                    "color": "#2563EB",
+                    "name": "Electric Sapphire"
                 },
                 {
                     "slug": "speed-emerald",
@@ -52,7 +52,7 @@
                 },
                 {
                     "slug": "foreground",
-                    "color": "#0F172A",
+                    "color": "#090D16",
                     "name": "Foreground"
                 },
                 {
@@ -66,12 +66,22 @@
             "customFontSize": true,
             "fontFamilies": [
                 {
-                    "fontFamily": "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif",
+                    "fontFamily": "'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+                    "slug": "display",
+                    "name": "Plus Jakarta Sans"
+                },
+                {
+                    "fontFamily": "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
                     "slug": "sans",
-                    "name": "Sans Serif"
+                    "name": "Inter"
                 }
             ],
             "fontSizes": [
+                {
+                    "slug": "x-small",
+                    "size": "0.75rem",
+                    "name": "X-Small"
+                },
                 {
                     "slug": "small",
                     "size": "0.875rem",
@@ -81,6 +91,11 @@
                     "slug": "medium",
                     "size": "1rem",
                     "name": "Medium"
+                },
+                {
+                    "slug": "title-sm",
+                    "size": "1.1rem",
+                    "name": "Title Small"
                 },
                 {
                     "slug": "large",
@@ -166,6 +181,7 @@
                     }
                 },
                 "typography": {
+                    "fontFamily": "var(--wp--preset--font-family--display)",
                     "fontWeight": "600"
                 }
             }
@@ -173,12 +189,33 @@
         "blocks": {
             "core/heading": {
                 "typography": {
+                    "fontFamily": "var(--wp--preset--font-family--display)",
+                    "fontWeight": "700",
+                    "letterSpacing": "-0.02em"
+                }
+            },
+            "core/site-title": {
+                "typography": {
+                    "fontFamily": "var(--wp--preset--font-family--display)",
+                    "fontSize": "1.1rem",
                     "fontWeight": "700",
                     "letterSpacing": "-0.02em"
                 }
             }
         }
     },
+    "customTemplates": [
+        {
+            "name": "page-services",
+            "title": "Services Page",
+            "postTypes": ["page"]
+        },
+        {
+            "name": "page-pricing",
+            "title": "Pricing Page",
+            "postTypes": ["page"]
+        }
+    ],
     "templateParts": {
         "header": {
             "area": "header"
