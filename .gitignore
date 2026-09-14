@@ -1,0 +1,18 @@
+# Dependencies
+node_modules/
+
+# Dev Tooling & Source Maps (Source SCSS and compiled CSS remain tracked)
+.sass-cache/
+*.css.map
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS & Editor artifacts
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.bak
