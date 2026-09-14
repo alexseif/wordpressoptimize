@@ -17,13 +17,18 @@
             "palette": [
                 {
                     "slug": "primary",
-                    "color": "#0A4D68",
-                    "name": "Primary"
+                    "color": "#0F172A",
+                    "name": "Deep Tech Navy"
                 },
                 {
                     "slug": "accent",
-                    "color": "#94D2BD",
-                    "name": "Accent"
+                    "color": "#0284C7",
+                    "name": "Electric Performance Blue"
+                },
+                {
+                    "slug": "speed-emerald",
+                    "color": "#10B981",
+                    "name": "Speed Emerald"
                 },
                 {
                     "slug": "background",
@@ -36,13 +41,23 @@
                     "name": "Background Alt"
                 },
                 {
+                    "slug": "card-surface",
+                    "color": "#FFFFFF",
+                    "name": "Card Surface"
+                },
+                {
+                    "slug": "border-subtle",
+                    "color": "#E2E8F0",
+                    "name": "Border Subtle"
+                },
+                {
                     "slug": "foreground",
-                    "color": "#111827",
+                    "color": "#0F172A",
                     "name": "Foreground"
                 },
                 {
                     "slug": "foreground-light",
-                    "color": "#6B7280",
+                    "color": "#64748B",
                     "name": "Foreground Light"
                 }
             ]
@@ -76,6 +91,16 @@
                     "slug": "x-large",
                     "size": "1.5rem",
                     "name": "X Large"
+                },
+                {
+                    "slug": "2x-large",
+                    "size": "2.25rem",
+                    "name": "2X Large"
+                },
+                {
+                    "slug": "3x-large",
+                    "size": "clamp(2.5rem, 5vw, 3.75rem)",
+                    "name": "3X Large"
                 }
             ]
         },
@@ -115,14 +140,42 @@
         },
         "typography": {
             "fontFamily": "var(--wp--preset--font-family--sans)",
-            "fontSize": "var(--wp--preset--font-size--medium)"
+            "fontSize": "var(--wp--preset--font-size--medium)",
+            "lineHeight": "1.6"
         },
-        "spacing": {
-            "padding": {
-                "top": "0",
-                "right": "0",
-                "bottom": "0",
-                "left": "0"
+        "elements": {
+            "link": {
+                "color": {
+                    "text": "var(--wp--preset--color--accent)"
+                }
+            },
+            "button": {
+                "border": {
+                    "radius": "0.5rem"
+                },
+                "color": {
+                    "background": "var(--wp--preset--color--primary)",
+                    "text": "#ffffff"
+                },
+                "spacing": {
+                    "padding": {
+                        "top": "0.875rem",
+                        "bottom": "0.875rem",
+                        "left": "1.75rem",
+                        "right": "1.75rem"
+                    }
+                },
+                "typography": {
+                    "fontWeight": "600"
+                }
+            }
+        },
+        "blocks": {
+            "core/heading": {
+                "typography": {
+                    "fontWeight": "700",
+                    "letterSpacing": "-0.02em"
+                }
             }
         }
     },
