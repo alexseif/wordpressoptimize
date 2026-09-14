@@ -27,3 +27,40 @@
 	}
 }
 
+// Architecture Showcase Card & Layer Animation Container
+.architecture-showcase-card {
+	background: $color-background;
+	border: 1px solid $color-border;
+	box-shadow: $shadow-md;
+	transition: all $transition-base;
+	position: relative;
+	overflow: hidden;
+
+	&:hover {
+		box-shadow: $shadow-xl;
+		border-color: rgba($color-accent, 0.4);
+	}
+}
+
+.wpopt-layered-graphic-container {
+	position: relative;
+	perspective: 1200px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	.wpopt-layered-svg {
+		filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.08));
+		transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.6s ease;
+		max-width: 100%;
+		height: auto;
+		display: block;
+	}
+
+	&:hover .wpopt-layered-svg {
+		transform: scale(1.02) translateY(-2px);
+		filter: drop-shadow(0 25px 35px rgba(0, 0, 0, 0.12));
+	}
+}
+
+
