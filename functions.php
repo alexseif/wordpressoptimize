@@ -218,7 +218,7 @@ function wpopt_json_ld_schema()
 				'name' => 'Alex Seif',
 				'jobTitle' => 'Principal Systems Engineer & Founder',
 			),
-			'priceRange' => '€120 - €2,400',
+			'priceRange' => '€120 - €2,100+',
 			'hasOfferCatalog' => array(
 				'@type' => 'OfferCatalog',
 				'name' => 'WordPress Optimization Services',
@@ -240,14 +240,14 @@ function wpopt_json_ld_schema()
 					array(
 						'@type' => 'Offer',
 						'name' => 'Performance Build',
-						'price' => '1200',
+						'price' => '1400',
 						'priceCurrency' => 'EUR',
 						'description' => 'Bespoke zero-bloat FSE block theme with WCAG 2.2 AA accessibility and GDPR compliance.',
 					),
 					array(
 						'@type' => 'Offer',
 						'name' => 'E-Commerce Speed Suite',
-						'price' => '2400',
+						'price' => '2100',
 						'priceCurrency' => 'EUR',
 						'description' => 'High-concurrency WooCommerce store build or speed overhaul with Redis and Cloudflare Edge caching.',
 					),

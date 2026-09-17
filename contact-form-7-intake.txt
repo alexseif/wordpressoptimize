@@ -15,7 +15,7 @@ FORM CODE:
 <p><label> Name (required)<br />
     [text* your-name] </label></p>
 
-<p><label> Business / Clinic name<br />
+<p><label> Business / Entity name<br />
     [text business-name] </label></p>
 
 <p><label> Website URL OR Instagram link<br />
@@ -41,7 +41,7 @@ Subject: New Website Intake Form Submission
 
 Message Body:
 From: [your-name] <[your-email]>
-Business/Clinic: [business-name]
+Business/Entity: [business-name]
 Website/Instagram: [website-url]
 Phone: [phone]
 
