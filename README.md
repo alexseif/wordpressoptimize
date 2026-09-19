@@ -23,15 +23,11 @@ WordPress Optimize Theme (wpopt) is a bespoke, zero-bloat Full Site Editing (FSE
 - Database Backup: Submissions stored via Flamingo (`flamingo_inbound`).
 - Zero Email Leaks: No public `mailto:` links on the frontend.
 
-## Asset Compilation
-Styles are written in modular SCSS under `assets/scss/`:
-```bash
-# Compile compressed CSS for production:
-npm run sass:compressed
-
-# Watch during development:
-npm run sass:watch
-```
+## Styling & SCSS Architecture
+Styles are authored in modular SCSS under `assets/scss/` and compiled to `assets/css/style.css`:
+* Production build: `npm run sass:compressed`
+* Watch during dev: `npm run sass:watch`
+* Complete styling architecture, design tokens, and CWV guidelines are documented in [SCSS-README.md](SCSS-README.md).
 
 ## Directory Layout
 ```
@@ -60,6 +56,7 @@ wpopt/
 │   └── page-case-studies.html
 ├── deploy.sh
 ├── DEPLOYMENT.md
+├── SCSS-README.md
 ├── functions.php
 └── theme.json
 ```

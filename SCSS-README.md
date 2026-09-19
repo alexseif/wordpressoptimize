@@ -1,96 +1,81 @@
-# SCSS Setup & Customization Guide
+# SCSS Styling Architecture & Guide
 
-This theme uses SCSS for styling, making it easy to customize colors, spacing, and components.
+The `wpopt` theme uses a modular, zero-bloat SCSS architecture engineered for 100/100 Core Web Vitals, zero layout shift (CLS), and seamless integration with WordPress Full Site Editing (`theme.json`).
 
-## File Structure
+---
 
+## Directory Structure
+
+All styles originate in `assets/scss/` and compile into `assets/css/style.css`:
+
+```text
+assets/scss/
+├── main.scss                  # Primary entry point importing all partials
+├── base/
+│   ├── _variables.scss        # SCSS tokens, spacing units, and container widths
+│   ├── _animations.scss       # Keyframes (fadeInUp, pulseGlow, architecture flows)
+│   └── _reset.scss            # Baseline resets and box-sizing normalization
+├── components/
+│   ├── _buttons.scss          # High-converting CTA buttons & hover transitions
+│   ├── _cards.scss            # Service and telemetry benchmark cards
+│   ├── _pricing.scss          # Harmonized pricing table styling & tier highlights
+│   ├── _steps.scss            # "How It Works" step-by-step process indicators
+│   ├── _case-studies.scss     # Enterprise case study cards & architecture badge
+│   └── _forms.scss            # Contact Form 7 intake form layout & state styling
+├── layout/
+│   ├── _header.scss           # Header navigation, branding, and WCAG skip link
+│   └── _responsive.scss       # Global media queries and layout adaptations
+└── pages/
+    ├── _homepage.scss         # Homepage hero, metrics counters, and trust badges
+    └── _sections.scss         # Section wrapper spacing and background alternates
 ```
-assets/
-├── scss/
-│   ├── _variables.scss    # Colors, spacing, typography variables
-│   ├── _base.scss         # Base styles and CSS variables
-│   ├── _components.scss    # Buttons, cards, navigation
-│   ├── _sections.scss     # Homepage sections styling
-│   ├── _forms.scss        # Contact Form 7 styling
-│   ├── _responsive.scss   # Responsive breakpoints
-│   └── main.scss          # Main file that imports all
-└── css/
-    └── style.css          # Compiled CSS (auto-generated)
-```
 
-## Quick Start
+---
 
-### Install Dependencies
+## Tooling & Compilation
+
+Dependencies are defined in `package.json` utilizing `sass` (Dart Sass).
+
 ```bash
+# 1. Install dev dependencies (first time only)
 npm install
-```
 
-### Compile SCSS
-```bash
-# One-time compilation
-npm run sass
-
-# Watch mode (auto-compile on changes)
+# 2. Watch mode (auto-compilation with expanded output during active CSS editing)
 npm run sass:watch
 
-# Production (compressed)
+# 3. Production build (compresses and minifies to ~18 KB for commit)
 npm run sass:compressed
 ```
 
-## Customization
+> [!IMPORTANT]
+> Always run `npm run sass:compressed` before committing changes to Git. Production droplets pull compiled assets directly and require zero Node.js/npm tooling.
 
-### Colors
-Edit `assets/scss/_variables.scss`:
-```scss
-$color-primary: #0A4D68;
-$color-accent: #94D2BD;
-// ... etc
-```
+---
 
-Or customize via `theme.json` - changes will be reflected in CSS variables.
+## Synergy with `theme.json`
 
-### Spacing
-Edit spacing values in `_variables.scss`:
-```scss
-$spacing-md: 1.5rem;
-$spacing-lg: 2rem;
-// ... etc
-```
+The theme bridges WordPress Block Editor controls with SCSS via standard CSS Custom Properties:
 
-### Typography
-Font family and sizes in `_variables.scss`:
-```scss
-$font-family-sans: 'Inter', ...;
-$font-weight-semibold: 600;
-```
+| Theme Token | `theme.json` Variable | SCSS Variable Fallback | Usage |
+| :--- | :--- | :--- | :--- |
+| **Deep Carbon** | `var(--wp--preset--color--primary)` | `$color-primary: #090D16` | Main text, dark headers |
+| **Electric Sapphire**| `var(--wp--preset--color--accent)` | `$color-accent: #2563EB` | Primary CTAs, active states |
+| **Speed Emerald** | `var(--wp--preset--color--speed-emerald)` | `$color-success: #10B981` | CWV 100/100 badges, checkmarks |
+| **Border Subtle** | `var(--wp--preset--color--border-subtle)` | `$color-border: #E2E8F0` | Card borders, dividers |
+| **Background Alt** | `var(--wp--preset--color--background-alt)` | `$color-background-alt: #F8FAFC` | Alternating section bands |
 
-### Components
-- **Buttons**: `_components.scss` - `.wp-block-button__link`
-- **Service Cards**: `_sections.scss` - `.wp-block-columns.alignwide`
-- **Forms**: `_forms.scss` - `.wpcf7`
-- **Hero Section**: `_sections.scss` - `.hero-section`
+---
 
-## Theme.json Integration
+## Core Web Vitals & GDPR Standards
 
-Colors defined in `theme.json` are automatically available as CSS variables:
-- `var(--wp--preset--color--primary)`
-- `var(--wp--preset--color--accent)`
-- etc.
-
-You can use these in SCSS or customize them via the WordPress Block Editor.
-
-## Best Practices
-
-1. **Use variables** - Don't hardcode colors/spacing
-2. **Modular approach** - Keep related styles in the same file
-3. **Mobile-first** - Styles in `_responsive.scss` override for smaller screens
-4. **Test after changes** - Always compile and test in browser
-
-## Troubleshooting
-
-If styles don't update:
-1. Make sure SCSS is compiled: `npm run sass`
-2. Clear browser cache
-3. Check `functions.php` is enqueuing `assets/css/style.css`
-4. Verify file permissions
-
+1. **0ms Local System Font Stack**:
+   * Zero external Google Fonts requests.
+   * Leverages high-performance native system typography:
+     ```scss
+     $font-family-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+     ```
+2. **Zero Layout Shift (CLS 0.00)**:
+   * Fixed aspect ratios and explicit dimensions for images and SVG assets.
+   * Autonomous CSS animations run strictly on composite layers (`transform` and `opacity`).
+3. **WCAG 2.2 AA Focus Styling**:
+   * Clear focus rings on buttons, inputs, and the screen-reader skip-to-content anchor.
