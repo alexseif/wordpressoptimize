@@ -1,96 +1,65 @@
 # WPOPT Theme
 
-WordPress Services & Care – Made for businesses that depend on their website
+WordPress Optimize Theme (wpopt) is a bespoke, zero-bloat Full Site Editing (FSE) block theme engineered for WordPress speed optimization and Core Web Vitals excellence.
 
-## Theme Features
+## Theme Highlights
+- Full Site Editing (FSE): Native Block Editor templates and parts; zero heavy visual builder dependencies.
+- 0ms Local Font Stack: Zero Google Fonts or external CDN calls for 100% GDPR compliance.
+- True Zero-Cookie Architecture: No third-party tracking scripts or cookie banners needed.
+- WCAG 2.2 AA Accessibility: High-contrast tokens, accessible skip links, and ARIA landmarks.
+- Telemetry Benchmark Card: Live hero architecture telemetry metrics display.
+- Animated Layered Architecture: Responsive SVG with autonomous CSS keyframes showcasing full-stack optimization.
 
-- Block Editor compatible (Full Site Editing)
-- Clean, minimal design
-- Native Block Editor patterns (no page builders)
-- Responsive design
-- CSS variables for easy customization
+## Harmonized Service Packages
+- Performance Diagnostic: €120 (One-time, 100% credited toward build)
+- Performance Care Retainer: €240 / month
+- Performance Build: Starting at €1,400 (One-time)
+- E-Commerce Speed Suite: Starting at €2,100 (One-time)
 
-## Brand Colors
+## Client Intake Form
+- Engine: Contact Form 7 (Form ID 13).
+- Fields: Name, Business / Entity name, Website URL or Instagram, Phone, Email, Message.
+- Notification Recipient: Configured to deliver to `alex.seif@gmail.com` with `Reply-To: [customer-email]`.
+- Database Backup: Submissions stored via Flamingo (`flamingo_inbound`).
+- Zero Email Leaks: No public `mailto:` links on the frontend.
 
-- Primary: #0A4D68
-- Accent: #94D2BD
-- Background: #FFFFFF / #F8FAFC
-- Dark text: #111827
+## Asset Compilation
+Styles are written in modular SCSS under `assets/scss/`:
+```bash
+# Compile compressed CSS for production:
+npm run sass:compressed
 
-## Typography
+# Watch during development:
+npm run sass:watch
+```
 
-- Font: Inter (Google Fonts)
-- Fallback: System sans-serif fonts
-
-## Pages Created
-
-The theme automatically creates the following pages on activation:
-
-- Home (front-page template)
-- Services
-- Pricing
-- Case Studies
-- Website Intake (with Contact Form 7)
-- Contact
-- About
-
-## Intake Form
-
-The intake form is created using Contact Form 7. The form includes:
-
-- Name (required)
-- Business / Clinic name
-- Website URL OR Instagram link
-- Phone
-- Email (required)
-- Message
-
-Form submissions are sent to: info@alexseif.com
-
-## Block Patterns
-
-The theme includes reusable block patterns for:
-
-- Hero Section
-- Problems Section
-- Services Section
-- How It Works Section
-- Trust Section
-- Final CTA Section
-
-## Setup
-
-1. Activate the theme in WordPress admin
-2. Pages will be created automatically
-3. Contact Form 7 intake form should be created (ID: 14)
-4. Customize content as needed
-
-## File Structure
-
+## Directory Layout
 ```
 wpopt/
-├── style.css
-├── theme.json
-├── functions.php
+├── assets/
+│   ├── css/style.css
+│   ├── scss/
+│   │   ├── base/
+│   │   ├── components/
+│   │   └── layout/
+│   └── img/
+│       ├── logo-transparent.png
+│       └── layered-architecture.svg
+├── parts/
+│   ├── header.html
+│   ├── hero-section.html
+│   ├── services-section.html
+│   ├── pricing-section.html
+│   ├── case-studies-section.html
+│   ├── intake-form-section.html
+│   └── footer.html
 ├── templates/
-│   ├── index.html
-│   ├── page.html
 │   ├── front-page.html
 │   ├── page-services.html
 │   ├── page-pricing.html
-│   ├── page-case-studies.html
-│   ├── page-intake.html
-│   ├── page-contact.html
-│   └── page-about.html
-├── parts/
-│   ├── header.html
-│   └── footer.html
-└── patterns/
-    ├── hero-section.php
-    ├── problems-section.php
-    ├── services-section.php
-    ├── how-it-works-section.php
-    ├── trust-section.php
-    └── final-cta-section.php
+│   └── page-case-studies.html
+├── deploy.sh
+├── DEPLOYMENT.md
+├── functions.php
+└── theme.json
 ```
-
