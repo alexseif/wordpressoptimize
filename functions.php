@@ -270,26 +270,3 @@ function wpopt_document_title($title)
 	return $title;
 }
 add_filter('document_title', 'wpopt_document_title');
-
-/**
- * Cookieless Google Tag (gtag.js) for analytics tracking
- * Configured with client_storage: 'none' and anonymize_ip: true to preserve the True Zero-Cookie Shield and GDPR compliance.
- */
-function wpopt_google_tag()
-{
-	?>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-V3XGV15757"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-V3XGV15757', {
-    'client_storage': 'none',
-    'anonymize_ip': true
-  });
-</script>
-	<?php
-}
-add_action('wp_head', 'wpopt_google_tag', 20);
