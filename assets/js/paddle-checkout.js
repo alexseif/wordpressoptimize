@@ -10,7 +10,8 @@ document.addEventListener('DOMContentLoaded', function () {
 			eventCallback: function (data) {
 				if (data && data.name === 'checkout.completed') {
 					var txnId = data.data && data.data.transaction_id ? data.data.transaction_id : '';
-					window.location.href = window.location.origin + '/diagnostic-intake/?p_txn=' + encodeURIComponent(txnId);
+					var redirectUrl = window.location.origin + '/diagnostic-intake/?order=success' + (txnId ? '&p_txn=' + encodeURIComponent(txnId) : '');
+					window.location.href = redirectUrl;
 				}
 			}
 		});
