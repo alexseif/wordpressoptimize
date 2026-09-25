@@ -1,60 +1,106 @@
-Contact Form 7 High-Priority Engineering Intake Form
-=====================================================
+Contact Form 7 Specifications: Client Intake vs Diagnostic Intake
+==================================================================
 
-To configure this form on production / DigitalOcean:
-1. Contact Form 7 is active (Form ID 13).
-2. The form code and mail settings are updated below for direct reference.
+1. CLIENT INTAKE FORM (Form ID 13)
+-----------------------------------
+Location: Homepage (#intake-form section) and /contact/
+Purpose: For prospective clients who haven't paid yet and have questions, scope inquiries, or want to discuss a project.
 
 FORM CODE:
-----------
 <div class="wpopt-intake-form">
-<p><label> Your Name (required)<br />
+<p><label> Name (required)<br />
     [text* your-name] </label></p>
 
-<p><label> Business / Organization<br />
+<p><label> Business / Entity name<br />
     [text business-name] </label></p>
 
-<p><label> Target Website URL (required)<br />
-    [url* website-url placeholder "https://yourwebsite.com"] </label></p>
+<p><label> Website URL OR Instagram link<br />
+    [url website-url] </label></p>
 
-<p><label> Primary Performance Objective (required)<br />
-    [select* project-scope "Pathway to 100/100 Core Web Vitals (sub-200ms TTFB / INP)" "High-Concurrency WooCommerce Overhaul (€2,100+)" "Bespoke Zero-Bloat Theme Build (€1,400+)" "Performance Care Retainer (€240/mo)" "Custom Enterprise Architecture Consultation"] </label></p>
-
-<p><label> Estimated Monthly Traffic<br />
-    [select traffic-volume "Under 50,000 visits / month" "50,000 - 250,000 visits / month" "250,000 - 1,000,000+ visits / month" "Pre-launch / New Enterprise Build"] </label></p>
-
-<p><label> Work Email (required)<br />
-    [email* your-email placeholder "name@company.com"] </label></p>
-
-<p><label> Phone / WhatsApp (optional for quick coordination)<br />
+<p><label> Phone<br />
     [tel phone] </label></p>
 
-<p><label> Specific Bottlenecks or Project Context<br />
-    [textarea message placeholder "Tell us about your current speed bottlenecks, hosting stack, or goals..."] </label></p>
+<p><label> Email (required)<br />
+    [email* your-email] </label></p>
 
-<p>[submit "Request High-Priority Engineering Review →"]</p>
+<p><label> Message<br />
+    [textarea message] </label></p>
+
+<p>[submit "Submit Inquiry"]</p>
 </div>
 
 MAIL SETTINGS:
--------------
 To: alex.seif@gmail.com
-From: [your-name] <[your-email]>
-Subject: [High-Priority Review] [business-name] - [project-scope]
+From: WordPress Optimize <wordpress@wordpressoptimize.com>
+Subject: [WordPress Optimize] Client Inquiry from [your-name]
 Reply-To: [your-email]
 
 Message Body:
-High-Priority Engineering Consultation Request:
+New Client Inquiry from WordPress Optimize:
 
 Client Name: [your-name]
-Business / Org: [business-name]
-Target Website: [website-url]
-Primary Objective: [project-scope]
-Monthly Traffic: [traffic-volume]
-Work Email: [your-email]
-Phone / WhatsApp: [phone]
+Email: [your-email]
+Phone: [phone]
+Business / Entity: [business-name]
+Website / Instagram: [website-url]
 
-Project Context / Bottlenecks:
+Message / Inquiry:
 [message]
 
 --
 Submitted via https://wordpressoptimize.com
+
+
+==================================================================
+2. DIAGNOSTIC INTAKE FORM (Form ID 61 on local, created per environment)
+-------------------------------------------------------------------------
+Location: /diagnostic-intake/
+Purpose: For paying clients with a valid €120 order. Collects contact info, target audit URL, monthly traffic, primary performance objective, and speed bottlenecks.
+
+FORM CODE:
+<div class="wpopt-intake-form">
+<p><label> Your Name (required)<br />
+    [text* your-name] </label></p>
+
+<p><label> Delivery Email (required)<br />
+    [email* your-email] </label></p>
+
+<p><label> Phone / WhatsApp (optional)<br />
+    [tel phone] </label></p>
+
+<p><label> Target Website URL to Audit (required)<br />
+    [url* website-url placeholder "https://yourwebsite.com"] </label></p>
+
+<p><label> Estimated Monthly Traffic (required)<br />
+    [select* traffic-volume "Under 50,000 visits / month" "50,000 – 250,000 visits / month" "250,000 – 1,000,000 visits / month" "1,000,000+ visits / month" "Pre-launch / Staging Site"] </label></p>
+
+<p><label> Primary Performance Objective (required)<br />
+    [select* performance-objective "100/100 Core Web Vitals (sub-200ms TTFB / INP)" "WooCommerce Checkout & Cart Performance" "Server Bottlenecks & Redis Caching" "Full Architectural Speed Audit" "Other / Unsure"] </label></p>
+
+<p><label> Known Bottlenecks, Hosting Stack, or Symptoms (optional)<br />
+    [textarea message placeholder "e.g. Hosting on Kinsta/DigitalOcean, checkout is sluggish, mobile LCP is high..."] </label></p>
+
+<p>[submit "Initiate Diagnostic Audit →"]</p>
+</div>
+
+MAIL SETTINGS:
+To: alex.seif@gmail.com
+From: WordPress Optimize <wordpress@wordpressoptimize.com>
+Subject: [WordPress Optimize] Paid Diagnostic Intake: [website-url] from [your-name]
+Reply-To: [your-email]
+
+Message Body:
+Paid Performance Diagnostic Kickoff Parameters:
+
+Client Name: [your-name]
+Delivery Email: [your-email]
+Phone / WhatsApp: [phone]
+Target Website to Audit: [website-url]
+Estimated Monthly Traffic: [traffic-volume]
+Primary Objective: [performance-objective]
+
+Known Bottlenecks & Context:
+[message]
+
+--
+Submitted via https://wordpressoptimize.com/diagnostic-intake/
