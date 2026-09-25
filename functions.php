@@ -172,7 +172,7 @@ function wpopt_create_pages_on_activation()
 		),
 		'diagnostic-intake' => array(
 			'title' => 'Diagnostic Kickoff & Intake',
-			'template' => 'templates/page.html',
+			'template' => 'default',
 		),
 	);
 
