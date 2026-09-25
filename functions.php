@@ -57,6 +57,23 @@ function wpopt_enqueue_assets()
 		'1.0.0',
 		true
 	);
+
+	// Enqueue Paddle Billing v2 and checkout trigger (deferred for optimal CWV)
+	wp_enqueue_script(
+		'paddle-v2',
+		'https://cdn.paddle.com/paddle/v2/paddle.js',
+		array(),
+		null,
+		array('strategy' => 'defer', 'in_footer' => true)
+	);
+
+	wp_enqueue_script(
+		'wpopt-paddle-checkout',
+		get_template_directory_uri() . '/assets/js/paddle-checkout.js',
+		array('paddle-v2'),
+		'1.0.0',
+		array('strategy' => 'defer', 'in_footer' => true)
+	);
 }
 add_action('wp_enqueue_scripts', 'wpopt_enqueue_assets');
 
@@ -152,6 +169,10 @@ function wpopt_create_pages_on_activation()
 		'about' => array(
 			'title' => 'About',
 			'template' => 'templates/page-about.html',
+		),
+		'diagnostic-intake' => array(
+			'title' => 'Diagnostic Kickoff & Intake',
+			'template' => 'templates/page.html',
 		),
 	);
 

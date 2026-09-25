@@ -1,53 +1,60 @@
-Contact Form 7 Intake Form
-===========================
+Contact Form 7 High-Priority Engineering Intake Form
+=====================================================
 
-To create the intake form:
-1. Install Contact Form 7 plugin if not already installed
-2. Go to Contact > Add New
-3. Copy the form code below into the form editor
-4. Set the mail settings as shown below
-5. Save the form and note the form ID
-6. Update the shortcode in templates/page-intake.html with the correct form ID
+To configure this form on production / DigitalOcean:
+1. Contact Form 7 is active (Form ID 13).
+2. The form code and mail settings are updated below for direct reference.
 
 FORM CODE:
 ----------
 <div class="wpopt-intake-form">
-<p><label> Name (required)<br />
+<p><label> Your Name (required)<br />
     [text* your-name] </label></p>
 
-<p><label> Business / Entity name<br />
+<p><label> Business / Organization<br />
     [text business-name] </label></p>
 
-<p><label> Website URL OR Instagram link<br />
-    [url website-url] </label></p>
+<p><label> Target Website URL (required)<br />
+    [url* website-url placeholder "https://yourwebsite.com"] </label></p>
 
-<p><label> Phone<br />
+<p><label> Primary Performance Objective (required)<br />
+    [select* project-scope "Pathway to 100/100 Core Web Vitals (sub-200ms TTFB / INP)" "High-Concurrency WooCommerce Overhaul (€2,100+)" "Bespoke Zero-Bloat Theme Build (€1,400+)" "Performance Care Retainer (€240/mo)" "Custom Enterprise Architecture Consultation"] </label></p>
+
+<p><label> Estimated Monthly Traffic<br />
+    [select traffic-volume "Under 50,000 visits / month" "50,000 - 250,000 visits / month" "250,000 - 1,000,000+ visits / month" "Pre-launch / New Enterprise Build"] </label></p>
+
+<p><label> Work Email (required)<br />
+    [email* your-email placeholder "name@company.com"] </label></p>
+
+<p><label> Phone / WhatsApp (optional for quick coordination)<br />
     [tel phone] </label></p>
 
-<p><label> Email (required)<br />
-    [email* your-email] </label></p>
+<p><label> Specific Bottlenecks or Project Context<br />
+    [textarea message placeholder "Tell us about your current speed bottlenecks, hosting stack, or goals..."] </label></p>
 
-<p><label> Message<br />
-    [textarea message] </label></p>
-
-<p>[submit "Submit"]</p>
+<p>[submit "Request High-Priority Engineering Review →"]</p>
 </div>
 
 MAIL SETTINGS:
 -------------
-To: info@alexseif.com
+To: alex.seif@gmail.com
 From: [your-name] <[your-email]>
-Subject: New Website Intake Form Submission
+Subject: [High-Priority Review] [business-name] - [project-scope]
+Reply-To: [your-email]
 
 Message Body:
-From: [your-name] <[your-email]>
-Business/Entity: [business-name]
-Website/Instagram: [website-url]
-Phone: [phone]
+High-Priority Engineering Consultation Request:
 
-Message:
+Client Name: [your-name]
+Business / Org: [business-name]
+Target Website: [website-url]
+Primary Objective: [project-scope]
+Monthly Traffic: [traffic-volume]
+Work Email: [your-email]
+Phone / WhatsApp: [phone]
+
+Project Context / Bottlenecks:
 [message]
 
 --
-This email was sent from the intake form on your WordPress site.
-
+Submitted via https://wordpressoptimize.com
