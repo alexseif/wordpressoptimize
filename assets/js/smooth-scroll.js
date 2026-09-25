@@ -7,6 +7,11 @@
 	// Smooth scroll for all anchor links
 	document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 		anchor.addEventListener('click', function (e) {
+			// Do not scroll if this element triggers Paddle checkout
+			if (this.hasAttribute('data-paddle-checkout')) {
+				return;
+			}
+
 			const href = this.getAttribute('href');
 			
 			// Skip if it's just "#"

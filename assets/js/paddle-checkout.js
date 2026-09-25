@@ -16,13 +16,14 @@ document.addEventListener('DOMContentLoaded', function () {
 			var priceId = button.getAttribute('data-paddle-checkout');
 			if (typeof Paddle !== 'undefined' && priceId) {
 				e.preventDefault();
+				e.stopPropagation();
 				Paddle.Checkout.open({
 					items: [{ priceId: priceId, quantity: 1 }],
 					settings: {
 						displayMode: 'overlay',
 						theme: 'dark',
 						locale: 'en',
-						successUrl: window.location.origin + '/diagnostic-intake/'
+						successUrl: window.location.origin + '/diagnostic-intake/?order=success'
 					}
 				});
 			}
