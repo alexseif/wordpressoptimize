@@ -6,7 +6,13 @@ document.addEventListener('DOMContentLoaded', function () {
 	if (typeof Paddle !== 'undefined') {
 		Paddle.Environment.set('sandbox');
 		Paddle.Initialize({
-			token: 'test_7c33e93ac99fb3196514f9c58aa'
+			token: 'test_7c33e93ac99fb3196514f9c58aa',
+			eventCallback: function (data) {
+				if (data && data.name === 'checkout.completed') {
+					var txnId = data.data && data.data.transaction_id ? data.data.transaction_id : '';
+					window.location.href = window.location.origin + '/diagnostic-intake/?p_txn=' + encodeURIComponent(txnId);
+				}
+			}
 		});
 	}
 

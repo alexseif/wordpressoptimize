@@ -86,6 +86,8 @@ $diag_form_content = <<<FORM
 <p><label> Known Bottlenecks, Hosting Stack, or Symptoms (optional)<br />
     [textarea message placeholder "e.g. Hosting on Kinsta/DigitalOcean, checkout is sluggish, mobile LCP is high..."] </label></p>
 
+[hidden p_txn default:get]
+
 <p>[submit "Initiate Diagnostic Audit →"]</p>
 </div>
 FORM;
@@ -95,7 +97,7 @@ $diag_mail = array(
     'subject' => '[WordPress Optimize] Paid Diagnostic Intake: [website-url] from [your-name]',
     'sender' => 'WordPress Optimize <wordpress@wordpressoptimize.com>',
     'recipient' => 'alex.seif@gmail.com',
-    'body' => "Paid Performance Diagnostic Kickoff Parameters:\n\nClient Name: [your-name]\nDelivery Email: [your-email]\nPhone / WhatsApp: [phone]\nTarget Website to Audit: [website-url]\nEstimated Monthly Traffic: [traffic-volume]\nPrimary Objective: [performance-objective]\n\nKnown Bottlenecks & Context:\n[message]\n\n--\nSubmitted via https://wordpressoptimize.com/diagnostic-intake/",
+    'body' => "Paid Performance Diagnostic Kickoff Parameters:\n\nClient Name: [your-name]\nDelivery Email: [your-email]\nPhone / WhatsApp: [phone]\nTarget Website to Audit: [website-url]\nEstimated Monthly Traffic: [traffic-volume]\nPrimary Objective: [performance-objective]\nPaddle Transaction ID: [p_txn]\n\nKnown Bottlenecks & Context:\n[message]\n\n--\nSubmitted via https://wordpressoptimize.com/diagnostic-intake/",
     'additional_headers' => "Reply-To: [your-email]",
     'attachments' => '',
     'use_html' => false,
