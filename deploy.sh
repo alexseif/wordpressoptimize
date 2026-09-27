@@ -16,7 +16,7 @@ git pull origin master
 
 echo "=== [2/3] Running Post-Deploy Automated Tasks ==="
 if [ -f "$THEME_DIR/bin/post-deploy.php" ] && command -v wp >/dev/null 2>&1; then
-    wp eval-file "$THEME_DIR/bin/post-deploy.php" --path="$WP_PATH" || echo "Warning: post-deploy script returned non-zero"
+    wp eval-file "$THEME_DIR/bin/post-deploy.php" --use-include --path="$WP_PATH" || echo "Warning: post-deploy script returned non-zero"
 fi
 
 echo "=== [3/3] Flushing WordPress Object / Page Cache ==="

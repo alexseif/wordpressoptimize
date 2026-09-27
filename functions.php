@@ -58,7 +58,8 @@ function wpopt_enqueue_assets()
 		true
 	);
 
-	// Enqueue Paddle Billing v2 and checkout trigger (deferred for optimal CWV)
+	// Paddle Billing scripts paused until merchant verification is completed
+	/*
 	wp_enqueue_script(
 		'paddle-v2',
 		'https://cdn.paddle.com/paddle/v2/paddle.js',
@@ -74,8 +75,12 @@ function wpopt_enqueue_assets()
 		filemtime(get_template_directory() . '/assets/js/paddle-checkout.js'),
 		array('strategy' => 'defer', 'in_footer' => true)
 	);
+	*/
 }
 add_action('wp_enqueue_scripts', 'wpopt_enqueue_assets');
+
+// Disable external Gravatars for 100% True Zero-Cookie Shield compliance
+add_filter('pre_get_avatar', '__return_empty_string');
 
 /**
  * Strip core bloat for sub-50ms execution and 100% GDPR compliance
