@@ -224,6 +224,11 @@
             "name": "page-woocommerce",
             "title": "WooCommerce Speed Optimization Page",
             "postTypes": ["page"]
+        },
+        {
+            "name": "page-case-study-coaching",
+            "title": "Coaching Case Study Page",
+            "postTypes": ["page"]
         }
     ],
     "templateParts": {

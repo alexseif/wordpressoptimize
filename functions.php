@@ -178,6 +178,10 @@ function wpopt_create_pages_on_activation()
 			'title' => 'WooCommerce Speed Optimization',
 			'template' => 'page-woocommerce',
 		),
+		'case-studies/coaching-businesses' => array(
+			'title' => 'Coaching Businesses Case Study',
+			'template' => 'page-case-study-coaching',
+		),
 	);
 
 	foreach ($pages as $slug => $page_data) {
@@ -244,6 +248,9 @@ function wpopt_seo_meta()
 	} elseif (is_page('woocommerce-speed-optimization')) {
 		$description = 'Turnkey WooCommerce speed optimization. Eliminate cart fragment lag, resolve high-concurrency checkout freezes, and configure Redis Object Cache for sub-second checkouts.';
 		$keywords = 'woocommerce speed optimization, woocommerce performance optimization, woocommerce cart fragments, high concurrency woocommerce, redis object cache woocommerce, woocommerce slow checkout';
+	} elseif (is_page('coaching-businesses')) {
+		$description = 'How we achieved sub-second Core Web Vitals for an executive coaching & membership platform: -89% TTFB, zero CLS video embeds, and +41% consultation booking conversion.';
+		$keywords = 'coaching business website, coach business website speed, learndash speed optimization, membership site speed wordpress, wordpress video funnels speed';
 	}
 
 	$title = wp_get_document_title();
@@ -351,6 +358,8 @@ function wpopt_document_title($title)
 		return 'Refund & Cancellation Policy | WordPress Optimize';
 	} elseif (is_page('woocommerce-speed-optimization')) {
 		return 'WooCommerce Speed Optimization: High-Concurrency Engineering | WordPress Optimize';
+	} elseif (is_page('coaching-businesses')) {
+		return 'Case Study: High-Traffic Coaching Platform Performance | WordPress Optimize';
 	}
 	return $title;
 }
