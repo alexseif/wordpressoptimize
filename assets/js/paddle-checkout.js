@@ -4,9 +4,8 @@
  */
 document.addEventListener('DOMContentLoaded', function () {
 	if (typeof Paddle !== 'undefined') {
-		Paddle.Environment.set('sandbox');
 		Paddle.Initialize({
-			token: 'test_7c33e93ac99fb3196514f9c58aa',
+			token: 'live_90e5941d603048c257b828dee44',
 			eventCallback: function (data) {
 				if (data && data.name === 'checkout.completed') {
 					var txnId = data.data && data.data.transaction_id ? data.data.transaction_id : '';
