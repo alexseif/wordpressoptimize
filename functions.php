@@ -211,7 +211,7 @@ add_action('after_switch_theme', 'wpopt_create_pages_on_activation');
 function wpopt_seo_meta()
 {
 	if (is_front_page()) {
-		echo '<meta name="description" content="WordPress speed optimization and high-concurrency WooCommerce performance engineering. Eliminate bloat, optimize LCP, and achieve 100/100 Core Web Vitals. Serving EU, Egypt, and GCC enterprises.">' . "\n";
+		echo '<meta name="description" content="WordPress speed optimization and high-concurrency WooCommerce performance engineering. Eliminate bloat, optimize LCP, and follow the proven pathway to 100/100 Core Web Vitals. Serving EU, Egypt, and GCC enterprises.">' . "\n";
 		echo '<meta name="keywords" content="WordPress speed optimization, WooCommerce speed optimization, Core Web Vitals, improve LCP WordPress, Redis Object Cache, WordPress performance, EU, Egypt, GCC">' . "\n";
 	}
 }
@@ -286,7 +286,7 @@ add_action('wp_head', 'wpopt_json_ld_schema');
 function wpopt_document_title($title)
 {
 	if (is_front_page()) {
-		return 'WordPress Speed Optimization & Core Web Vitals Engineering | WordPress Optimize';
+		return 'WordPress Speed Optimization: The Pathway to 100/100 Web Vitals | WordPress Optimize';
 	}
 	return $title;
 }
