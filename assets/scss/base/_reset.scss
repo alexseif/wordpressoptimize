@@ -98,3 +98,19 @@ a {
 	}
 }
 
+// Reset default block gaps between top-level sections and template parts
+.wp-site-blocks > * {
+	margin-block-start: 0 !important;
+	margin-block-end: 0 !important;
+}
+
+.wp-block-template-part {
+	margin-block-start: 0 !important;
+	margin-block-end: 0 !important;
+
+	> * {
+		margin-block-start: 0 !important;
+		margin-block-end: 0 !important;
+	}
+}
+
