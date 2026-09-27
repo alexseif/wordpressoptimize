@@ -210,10 +210,49 @@ add_action('after_switch_theme', 'wpopt_create_pages_on_activation');
  */
 function wpopt_seo_meta()
 {
-	if (is_front_page()) {
-		echo '<meta name="description" content="WordPress speed optimization and high-concurrency WooCommerce performance engineering. Eliminate bloat, optimize LCP, and follow the proven pathway to 100/100 Core Web Vitals. Serving EU, Egypt, and GCC enterprises.">' . "\n";
-		echo '<meta name="keywords" content="WordPress speed optimization, WooCommerce speed optimization, Core Web Vitals, improve LCP WordPress, Redis Object Cache, WordPress performance, EU, Egypt, GCC">' . "\n";
+	$description = 'WordPress speed optimization and high-concurrency WooCommerce performance engineering. Eliminate bloat, optimize LCP, and follow the proven pathway to 100/100 Core Web Vitals. Serving EU, Egypt, and GCC enterprises.';
+	$keywords = 'WordPress speed optimization, WooCommerce speed optimization, Core Web Vitals, improve LCP WordPress, Redis Object Cache, WordPress performance, EU, Egypt, GCC';
+
+	if (is_page('services')) {
+		$description = 'Comprehensive WordPress and WooCommerce speed services: Core Web Vitals remediation, Redis Object Cache indexing, database query tuning, and bespoke block theme engineering.';
+		$keywords = 'WordPress speed services, WooCommerce speed optimization, Redis cache WordPress, Core Web Vitals audit, database query tuning';
+	} elseif (is_page('pricing')) {
+		$description = 'Predictable, harmonized pricing for WordPress speed optimization: €120 Performance Diagnostic (100% credited), €240/mo Care Retainer, and bespoke WooCommerce overhauls.';
+		$keywords = 'WordPress optimization pricing, WooCommerce speed pricing, WordPress retainer, Core Web Vitals cost, performance diagnostic';
+	} elseif (is_page('case-studies')) {
+		$description = 'Empirical WordPress and WooCommerce speed results across Medical Clinics, Coaching Businesses, High-Concurrency Stores, and Global NGO portals.';
+		$keywords = 'WordPress case studies, WooCommerce speed results, NGO website speed, clinic website optimization, coaching business website';
+	} elseif (is_page('contact')) {
+		$description = 'Consult with Principal Systems Engineer Alex Seif. Inquire about bespoke WordPress speed engineering, performance diagnostics, and monthly retainers.';
+		$keywords = 'contact WordPress engineer, WordPress speed consultation, WooCommerce performance architect';
+	} elseif (is_page('diagnostic-intake')) {
+		$description = 'Submit your target URL and technical parameters to initiate your WordPress Performance Diagnostic audit.';
+		$keywords = 'WordPress diagnostic kickoff, performance intake, speed audit submission';
+	} elseif (is_page('privacy-policy')) {
+		$description = 'WordPress Optimize Privacy Policy. Strict True Zero-Cookie Shield standard, zero third-party tracking cookies, and Paddle Merchant of Record compliance.';
+		$keywords = 'privacy policy, zero cookie WordPress, GDPR compliant speed, Paddle merchant of record';
+	} elseif (is_page('terms')) {
+		$description = 'WordPress Optimize Terms and Conditions. Technical deliverables, 48-hour diagnostic SLA, Paddle buyer terms, and client code ownership.';
+		$keywords = 'terms and conditions, WordPress service agreement, performance diagnostic SLA';
+	} elseif (is_page('refund-policy')) {
+		$description = 'WordPress Optimize Refund & Cancellation Policy. 100% Diagnostic fee credit toward full builds, pre-analysis refunds, and cancel-anytime retainers.';
+		$keywords = 'refund policy, cancellation terms, diagnostic fee credit, WordPress retainer cancellation';
 	}
+
+	$title = wp_get_document_title();
+	$canonical = is_singular() ? get_permalink() : home_url('/');
+
+	echo '<meta name="description" content="' . esc_attr($description) . '">' . "\n";
+	echo '<meta name="keywords" content="' . esc_attr($keywords) . '">' . "\n";
+	echo '<meta property="og:title" content="' . esc_attr($title) . '">' . "\n";
+	echo '<meta property="og:description" content="' . esc_attr($description) . '">' . "\n";
+	echo '<meta property="og:url" content="' . esc_url($canonical) . '">' . "\n";
+	echo '<meta property="og:site_name" content="WordPress Optimize">' . "\n";
+	echo '<meta property="og:type" content="website">' . "\n";
+	echo '<meta property="og:locale" content="en_US">' . "\n";
+	echo '<meta name="twitter:card" content="summary_large_image">' . "\n";
+	echo '<meta name="twitter:title" content="' . esc_attr($title) . '">' . "\n";
+	echo '<meta name="twitter:description" content="' . esc_attr($description) . '">' . "\n";
 }
 add_action('wp_head', 'wpopt_seo_meta');
 
@@ -287,6 +326,22 @@ function wpopt_document_title($title)
 {
 	if (is_front_page()) {
 		return 'WordPress Speed Optimization: The Pathway to 100/100 Web Vitals | WordPress Optimize';
+	} elseif (is_page('services')) {
+		return 'WordPress Speed & WooCommerce Performance Services | WordPress Optimize';
+	} elseif (is_page('pricing')) {
+		return 'Transparent Pricing: WordPress Speed & Performance Plans | WordPress Optimize';
+	} elseif (is_page('case-studies')) {
+		return 'WordPress & WooCommerce Speed Case Studies | WordPress Optimize';
+	} elseif (is_page('contact')) {
+		return 'Consult a Senior WordPress Performance Architect | WordPress Optimize';
+	} elseif (is_page('diagnostic-intake')) {
+		return 'Diagnostic Kickoff & Intake | WordPress Optimize';
+	} elseif (is_page('privacy-policy')) {
+		return 'Privacy Policy: True Zero-Cookie Architecture | WordPress Optimize';
+	} elseif (is_page('terms')) {
+		return 'Terms & Conditions | WordPress Optimize';
+	} elseif (is_page('refund-policy')) {
+		return 'Refund & Cancellation Policy | WordPress Optimize';
 	}
 	return $title;
 }
