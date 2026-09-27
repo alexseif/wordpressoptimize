@@ -4,59 +4,57 @@
 .wpcf7 {
 	max-width: 600px;
 	margin: 0 auto;
-	padding: $spacing-xl;
-	background: $color-background;
-	border-radius: $radius-xl;
-	box-shadow: $shadow-xl;
-	border: 1px solid $color-border;
+	padding: 0;
 	position: relative;
-
-	&::after {
-		content: '';
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		height: 4px;
-		background: linear-gradient(90deg, $color-primary, $color-accent);
-		border-radius: $radius-xl $radius-xl 0 0;
-	}
+	width: 100%;
+	box-sizing: border-box;
 
 	.wpcf7-form {
+		width: 100%;
+		box-sizing: border-box;
+
+		p {
+			margin-bottom: $spacing-md;
+		}
+
 		.wpcf7-form-control-wrap {
-			margin-bottom: $spacing-lg;
+			margin-bottom: $spacing-sm;
 			display: block;
+			width: 100%;
 		}
 
 		label {
 			display: block;
-			margin-bottom: $spacing-sm;
+			margin-bottom: $spacing-xs;
 			font-weight: $font-weight-medium;
 			color: $color-foreground;
 			font-size: 0.9375rem;
+			width: 100%;
 		}
 
 		input[type="text"],
 		input[type="email"],
 		input[type="tel"],
 		input[type="url"],
+		select,
 		textarea {
 			width: 100%;
-			padding: $spacing-md;
-			border: 2px solid $color-border;
+			max-width: 100%;
+			padding: 0.75rem 1rem;
+			border: 1.5px solid var(--wp--preset--color--border-subtle, #E2E8F0);
 			border-radius: $radius-md;
 			font-family: $font-family-sans;
 			font-size: 1rem;
 			line-height: 1.5;
 			color: $color-foreground;
-			background-color: $color-background;
+			background-color: #FFFFFF;
 			transition: all $transition-base;
 			box-sizing: border-box;
 
 			&:focus {
 				outline: none;
-				border-color: $color-primary;
-				box-shadow: 0 0 0 3px rgba(10, 77, 104, 0.1);
+				border-color: var(--wp--preset--color--accent, #2563EB);
+				box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
 			}
 
 			&::placeholder {
@@ -64,33 +62,38 @@
 			}
 		}
 
+		select {
+			appearance: auto;
+			cursor: pointer;
+		}
+
 		textarea {
-			min-height: 120px;
+			min-height: 100px;
 			resize: vertical;
 		}
 
 		input[type="submit"] {
 			width: 100%;
-			background: linear-gradient(135deg, $color-primary 0%, $color-primary-light 100%);
-			color: white;
-			padding: $spacing-md $spacing-xl;
+			background: var(--wp--preset--color--primary, #090D16);
+			color: #ffffff;
+			padding: 0.875rem 1.5rem;
 			border: none;
 			border-radius: $radius-md;
 			font-weight: $font-weight-semibold;
-			font-size: 1.125rem;
+			font-size: 1.05rem;
 			cursor: pointer;
 			transition: all $transition-base;
 			box-shadow: $shadow-md;
-			margin-top: $spacing-md;
+			margin-top: $spacing-sm;
 
 			&:hover {
-				transform: translateY(-2px);
+				background: var(--wp--preset--color--accent, #2563EB);
+				transform: translateY(-1px);
 				box-shadow: $shadow-lg;
-				background: linear-gradient(135deg, $color-primary-light 0%, $color-primary 100%);
 			}
 
 			&:focus {
-				outline: 2px solid $color-accent;
+				outline: 2px solid var(--wp--preset--color--accent, #2563EB);
 				outline-offset: 2px;
 			}
 
@@ -101,17 +104,17 @@
 
 		.wpcf7-not-valid-tip {
 			color: $color-error;
-			font-size: 0.875rem;
-			margin-top: $spacing-xs;
+			font-size: 0.85rem;
+			margin-top: 0.25rem;
 			display: block;
 		}
 
 		.wpcf7-validation-errors,
 		.wpcf7-mail-sent-ok {
-			padding: $spacing-md;
+			padding: 1rem;
 			border-radius: $radius-md;
-			margin-top: $spacing-md;
-			font-size: 0.9375rem;
+			margin-top: 1rem;
+			font-size: 0.9rem;
 		}
 
 		.wpcf7-validation-errors {
@@ -131,42 +134,26 @@
 // Form Container Enhancement
 .intake-form-container,
 .wp-block-group:has(.wpcf7) {
-	background: linear-gradient(135deg, $color-background-alt 0%, $color-background 100%);
-	padding: $spacing-4xl $spacing-lg;
+	background: #FFFFFF;
+	padding: 2.5rem 2rem;
 	border-radius: $radius-xl;
 	position: relative;
-	overflow: hidden;
-	box-shadow: $shadow-xl;
-	border: 1px solid $color-border;
+	box-shadow: $shadow-md;
+	border: 1px solid var(--wp--preset--color--border-subtle, #E2E8F0);
+	max-width: 680px;
+	margin-left: auto;
+	margin-right: auto;
+	box-sizing: border-box;
 
-	&::before {
-		content: '';
-		position: absolute;
-		top: -50%;
-		left: -50%;
-		width: 200%;
-		height: 200%;
-		background: radial-gradient(circle, rgba(15, 143, 166, 0.1) 0%, transparent 70%);
-		pointer-events: none;
+	@media (max-width: $breakpoint-md) {
+		padding: 1.25rem 1rem !important;
+		border-radius: $radius-lg !important;
 	}
 }
 
 // Intake Page
 .intake-page {
-	background: linear-gradient(135deg, $color-background-alt 0%, $color-background 100%);
+	background: $color-background;
 	position: relative;
 	overflow: hidden;
-
-	&::before {
-		content: '';
-		position: absolute;
-		top: -30%;
-		right: -20%;
-		width: 600px;
-		height: 600px;
-		background: radial-gradient(circle, rgba(10, 77, 104, 0.03) 0%, transparent 70%);
-		border-radius: 50%;
-		pointer-events: none;
-	}
 }
-

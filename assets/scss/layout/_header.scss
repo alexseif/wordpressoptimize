@@ -1,18 +1,87 @@
 @import '../base/variables';
 
-// Header
+// Header Container
+.site-header,
 .wp-block-group:has(.wp-block-site-title) {
-	// border-bottom: 1px solid $color-border;
 	background: $color-background;
 	position: sticky;
 	top: 0;
 	z-index: 100;
 	backdrop-filter: blur(10px);
 	background-color: rgba(255, 255, 255, 0.95);
-	// box-shadow: $shadow-sm;
+	padding-left: var(--wp--style--root--padding-left, 1.25rem);
+	padding-right: var(--wp--style--root--padding-right, 1.25rem);
 }
 
-// Navigation
+.header-branding-group {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 0.75rem;
+
+	.site-logo,
+	.wp-block-image {
+		flex-shrink: 0;
+		margin: 0;
+
+		img {
+			width: 52px;
+			height: 52px;
+			display: block;
+			border-radius: 8px;
+			aspect-ratio: 1 / 1;
+		}
+	}
+
+	.wp-block-site-title {
+		font-size: 1.1rem;
+		font-weight: 700;
+		letter-spacing: -0.02em;
+		margin: 0;
+
+		a {
+			color: $color-foreground;
+			text-decoration: none;
+		}
+	}
+
+	.header-badges {
+		display: flex;
+		align-items: center;
+		gap: 0.4rem;
+		flex-wrap: wrap;
+	}
+}
+
+// Hamburger Open Button
+.wp-block-navigation__responsive-container-open {
+	background: transparent;
+	border: 1px solid var(--wp--preset--color--border-subtle, #E2E8F0);
+	border-radius: 0.5rem;
+	padding: 0.5rem;
+	min-width: 44px;
+	min-height: 44px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	transition: background-color $transition-base;
+
+	svg {
+		fill: $color-foreground;
+		width: 22px;
+		height: 22px;
+	}
+
+	&:hover,
+	&:focus {
+		background-color: $color-background-alt;
+		outline: 2px solid $color-accent;
+		outline-offset: 2px;
+	}
+}
+
+// Desktop Navigation Items
 .wp-block-navigation {
 	.wp-block-navigation-item {
 		a {
@@ -32,5 +101,121 @@
 				outline-offset: 2px;
 			}
 		}
+	}
+}
+
+// Fullscreen Animated Mobile Navigation Overlay
+.wp-block-navigation__responsive-container.is-menu-open {
+	position: fixed !important;
+	top: 0 !important;
+	left: 0 !important;
+	right: 0 !important;
+	bottom: 0 !important;
+	width: 100vw !important;
+	height: 100vh !important;
+	height: 100dvh !important;
+	background: #090D16 !important;
+	color: #ffffff !important;
+	z-index: 999999 !important;
+	display: flex !important;
+	flex-direction: column !important;
+	justify-content: center !important;
+	align-items: center !important;
+	padding: 2rem 1.5rem !important;
+	box-sizing: border-box !important;
+	animation: fullPageMenuFadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards !important;
+
+	.wp-block-navigation__responsive-close {
+		width: 100%;
+		max-width: 480px;
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.wp-block-navigation__responsive-dialog {
+		width: 100%;
+		position: relative;
+	}
+
+	// Close Button
+	.wp-block-navigation__responsive-container-close {
+		position: absolute !important;
+		top: -3.5rem !important;
+		right: 0 !important;
+		background: rgba(255, 255, 255, 0.1) !important;
+		border: 1px solid rgba(255, 255, 255, 0.2) !important;
+		border-radius: 50% !important;
+		width: 44px !important;
+		height: 44px !important;
+		display: flex !important;
+		align-items: center !important;
+		justify-content: center !important;
+		cursor: pointer !important;
+		transition: background-color 0.2s ease, transform 0.2s ease !important;
+
+		svg {
+			fill: #ffffff !important;
+			width: 22px !important;
+			height: 22px !important;
+		}
+
+		&:hover,
+		&:focus {
+			background: rgba(255, 255, 255, 0.25) !important;
+			transform: scale(1.05);
+			outline: 2px solid $color-accent !important;
+		}
+	}
+
+	// Mobile Navigation Links
+	.wp-block-navigation__container {
+		display: flex !important;
+		flex-direction: column !important;
+		align-items: center !important;
+		gap: 0.85rem !important;
+		width: 100% !important;
+		padding: 0 !important;
+		margin: 0 !important;
+
+		.wp-block-navigation-item {
+			width: 100%;
+			text-align: center;
+
+			a {
+				font-size: 1.35rem !important;
+				font-weight: 700 !important;
+				color: #ffffff !important;
+				padding: 0.65rem 1.5rem !important;
+				display: block !important;
+				border-radius: 0.5rem !important;
+				text-decoration: none !important;
+				transition: color 0.15s ease, background-color 0.15s ease !important;
+				letter-spacing: -0.01em;
+
+				&:hover,
+				&:focus {
+					color: var(--wp--preset--color--accent) !important;
+					background: rgba(255, 255, 255, 0.06) !important;
+				}
+			}
+
+			&.current-menu-item a {
+				color: var(--wp--preset--color--accent) !important;
+			}
+		}
+	}
+}
+
+// Fullscreen menu fade/scale keyframes
+@keyframes fullPageMenuFadeIn {
+	from {
+		opacity: 0;
+		transform: scale(0.97) translateY(-8px);
+	}
+	to {
+		opacity: 1;
+		transform: scale(1) translateY(0);
 	}
 }

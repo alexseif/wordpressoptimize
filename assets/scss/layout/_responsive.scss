@@ -1,30 +1,143 @@
 @import '../base/variables';
 
-// Responsive Design
+// Root Padding Definitions (WordPress FSE Compatibility)
+:root {
+	--wp--style--root--padding-left: 1.5rem;
+	--wp--style--root--padding-right: 1.5rem;
+}
+
+// Global Horizontal Overflow Defense
+html, body {
+	overflow-x: hidden !important;
+	max-width: 100vw !important;
+	position: relative;
+}
+
+// Tablet & Mobile Adjustments (< 768px)
 @media (max-width: $breakpoint-md) {
 	:root {
-		--wp--preset--spacing--section: #{$spacing-2xl};
+		--wp--preset--spacing--section: 3.5rem;
+		--wp--style--root--padding-left: 1.25rem;
+		--wp--style--root--padding-right: 1.25rem;
+	}
+
+	// Ensure all sections have proper horizontal padding and normalized vertical height
+	.wp-block-group.alignfull {
+		padding-top: 3.5rem !important;
+		padding-bottom: 3.5rem !important;
+		padding-left: 1.25rem !important;
+		padding-right: 1.25rem !important;
+		box-sizing: border-box !important;
 	}
 
 	.wp-block-group.is-style-container {
-		padding-left: $spacing-md;
-		padding-right: $spacing-md;
+		padding-left: 1.25rem;
+		padding-right: 1.25rem;
 	}
 
+	// Hero Section Mobile Sizing
+	.hero-section {
+		padding-top: 3rem !important;
+		padding-bottom: 3.5rem !important;
+		min-height: auto !important;
+
+		h1 {
+			font-size: clamp(1.85rem, 6.5vw, 2.75rem) !important;
+			margin-bottom: 1.25rem !important;
+		}
+
+		p {
+			font-size: 1rem !important;
+			line-height: 1.6 !important;
+		}
+	}
+
+	// Hero Pill Badge Wrapping
+	.hero-pill,
+	.hero-section p.has-background {
+		font-size: 0.75rem !important;
+		letter-spacing: 0.03em !important;
+		padding: 0.4rem 0.85rem !important;
+		border-radius: 1rem !important;
+		white-space: normal !important;
+		max-width: 100% !important;
+		word-break: break-word !important;
+		display: inline-block !important;
+		line-height: 1.4 !important;
+	}
+
+	// Hero Telemetry Card
+	.telemetry-benchmark-card {
+		padding: 1.25rem 1rem !important;
+		margin-bottom: 2rem !important;
+
+		> div:first-child {
+			flex-direction: column !important;
+			align-items: flex-start !important;
+			gap: 0.5rem !important;
+		}
+
+		.wp-block-column {
+			padding: 1rem !important;
+		}
+
+		div[style*="font-family:monospace"] {
+			font-size: 0.78rem !important;
+			line-height: 1.8 !important;
+		}
+	}
+
+	// Columns and Cards Stack
 	.wp-block-columns {
-		flex-direction: column;
-		gap: $spacing-md;
+		flex-direction: column !important;
+		gap: 1.5rem !important;
+	}
+
+	.wp-block-column {
+		flex-basis: 100% !important;
+		max-width: 100% !important;
+		min-width: 0 !important;
+	}
+
+	.architecture-showcase-card,
+	.case-study-card,
+	.pricing-card {
+		padding: 1.5rem 1.25rem !important;
+		border-radius: $radius-lg !important;
+	}
+
+	// Prevent SVG / Graphic Container Overflow
+	.wpopt-layered-graphic-container {
+		max-width: 100% !important;
+		overflow: hidden !important;
+	}
+
+	.wpopt-layered-svg {
+		max-width: 100% !important;
+		height: auto !important;
+		display: block !important;
+	}
+
+	// Full-Width Mobile Buttons
+	.wp-block-buttons {
+		flex-direction: column !important;
+		width: 100% !important;
+		gap: 0.75rem !important;
+	}
+
+	.wp-block-button {
+		width: 100% !important;
 	}
 
 	.wp-block-button__link {
-		width: 100%;
-		text-align: center;
+		width: 100% !important;
+		text-align: center !important;
+		box-sizing: border-box !important;
+		padding-left: 1rem !important;
+		padding-right: 1rem !important;
 	}
 
-	.wpcf7 {
-		padding: $spacing-lg;
-	}
-
+	// Typography Scaling
 	h1 {
 		font-size: clamp(1.75rem, 6vw, 2.5rem);
 	}
@@ -32,34 +145,41 @@
 	h2 {
 		font-size: clamp(1.5rem, 5vw, 2rem);
 	}
-
-	.hero-section {
-		padding-top: $spacing-4xl;
-		padding-bottom: $spacing-4xl;
-		min-height: 70vh;
-	}
-
-	h1 {
-		font-size: clamp(2rem, 7vw, 3.5rem);
-	}
-
-	h2 {
-		font-size: clamp(1.75rem, 6vw, 2.75rem);
-	}
 }
 
+// Small Mobile Viewports (< 640px)
 @media (max-width: $breakpoint-sm) {
-	.wp-block-group:has(.wp-block-site-title) {
-		padding: $spacing-sm $spacing-md;
+	:root {
+		--wp--style--root--padding-left: 1rem;
+		--wp--style--root--padding-right: 1rem;
 	}
 
-	.wp-block-navigation {
-		flex-direction: column;
+	.site-header {
+		padding-left: 1rem !important;
+		padding-right: 1rem !important;
+		padding-top: 0.5rem !important;
+		padding-bottom: 0.5rem !important;
+
+		// Hide CTA in header on small mobile to give full room to branding and hamburger
+		.header-nav-group .wp-block-buttons {
+			display: none !important;
+		}
 	}
 
-	.hero-badge {
-		font-size: 0.75rem;
-		padding: $spacing-xs $spacing-sm;
+	.wp-block-group.alignfull {
+		padding-left: 1rem !important;
+		padding-right: 1rem !important;
+	}
+
+	.hero-pill,
+	.hero-section p.has-background {
+		font-size: 0.7rem !important;
+		padding: 0.35rem 0.75rem !important;
+	}
+
+	.architecture-showcase-card,
+	.case-study-card,
+	.pricing-card {
+		padding: 1.25rem 1rem !important;
 	}
 }
-
