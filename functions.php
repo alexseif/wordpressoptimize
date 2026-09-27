@@ -174,6 +174,10 @@ function wpopt_create_pages_on_activation()
 			'title' => 'Diagnostic Kickoff & Intake',
 			'template' => 'default',
 		),
+		'woocommerce-speed-optimization' => array(
+			'title' => 'WooCommerce Speed Optimization',
+			'template' => 'page-woocommerce',
+		),
 	);
 
 	foreach ($pages as $slug => $page_data) {
@@ -237,6 +241,9 @@ function wpopt_seo_meta()
 	} elseif (is_page('refund-policy')) {
 		$description = 'WordPress Optimize Refund & Cancellation Policy. 100% Diagnostic fee credit toward full builds, pre-analysis refunds, and cancel-anytime retainers.';
 		$keywords = 'refund policy, cancellation terms, diagnostic fee credit, WordPress retainer cancellation';
+	} elseif (is_page('woocommerce-speed-optimization')) {
+		$description = 'Turnkey WooCommerce speed optimization. Eliminate cart fragment lag, resolve high-concurrency checkout freezes, and configure Redis Object Cache for sub-second checkouts.';
+		$keywords = 'woocommerce speed optimization, woocommerce performance optimization, woocommerce cart fragments, high concurrency woocommerce, redis object cache woocommerce, woocommerce slow checkout';
 	}
 
 	$title = wp_get_document_title();
@@ -342,6 +349,8 @@ function wpopt_document_title($title)
 		return 'Terms & Conditions | WordPress Optimize';
 	} elseif (is_page('refund-policy')) {
 		return 'Refund & Cancellation Policy | WordPress Optimize';
+	} elseif (is_page('woocommerce-speed-optimization')) {
+		return 'WooCommerce Speed Optimization: High-Concurrency Engineering | WordPress Optimize';
 	}
 	return $title;
 }

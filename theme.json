@@ -214,6 +214,16 @@
             "name": "page-pricing",
             "title": "Pricing Page",
             "postTypes": ["page"]
+        },
+        {
+            "name": "page-case-studies",
+            "title": "Case Studies Page",
+            "postTypes": ["page"]
+        },
+        {
+            "name": "page-woocommerce",
+            "title": "WooCommerce Speed Optimization Page",
+            "postTypes": ["page"]
         }
     ],
     "templateParts": {
