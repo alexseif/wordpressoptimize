@@ -71,7 +71,7 @@ function wpopt_enqueue_assets()
 		'wpopt-paddle-checkout',
 		get_template_directory_uri() . '/assets/js/paddle-checkout.js',
 		array('paddle-v2'),
-		'1.0.0',
+		filemtime(get_template_directory() . '/assets/js/paddle-checkout.js'),
 		array('strategy' => 'defer', 'in_footer' => true)
 	);
 }
