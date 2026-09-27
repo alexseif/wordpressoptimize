@@ -211,8 +211,8 @@ add_action('after_switch_theme', 'wpopt_create_pages_on_activation');
 function wpopt_seo_meta()
 {
 	if (is_front_page()) {
-		echo '<meta name="description" content="WordPress Optimize: High-performance WordPress speed engineering, Core Web Vitals remediation, Redis Object Caching, and high-concurrency WooCommerce architecture. Serving EU, Egypt, and GCC enterprises.">' . "\n";
-		echo '<meta name="keywords" content="WordPress speed optimization, Core Web Vitals, Redis Object Cache, WooCommerce performance, GDPR compliant WordPress, WCAG 2.2 accessibility, EU, Egypt, GCC">' . "\n";
+		echo '<meta name="description" content="WordPress speed optimization and high-concurrency WooCommerce performance engineering. Eliminate bloat, optimize LCP, and achieve 100/100 Core Web Vitals. Serving EU, Egypt, and GCC enterprises.">' . "\n";
+		echo '<meta name="keywords" content="WordPress speed optimization, WooCommerce speed optimization, Core Web Vitals, improve LCP WordPress, Redis Object Cache, WordPress performance, EU, Egypt, GCC">' . "\n";
 	}
 }
 add_action('wp_head', 'wpopt_seo_meta');
@@ -227,7 +227,7 @@ function wpopt_json_ld_schema()
 			'@context' => 'https://schema.org',
 			'@type' => 'ProfessionalService',
 			'name' => 'WordPress Optimize',
-			'description' => 'Elite WordPress speed engineering, Core Web Vitals remediation, Redis Object Caching, and high-concurrency WooCommerce architecture.',
+			'description' => 'Elite WordPress speed optimization, Core Web Vitals remediation, Redis Object Caching, and high-concurrency WooCommerce performance engineering.',
 			'url' => home_url(),
 			'areaServed' => array(
 				array('@type' => 'AdministrativeArea', 'name' => 'European Union'),
@@ -242,32 +242,32 @@ function wpopt_json_ld_schema()
 			'priceRange' => '€120 - €2,100+',
 			'hasOfferCatalog' => array(
 				'@type' => 'OfferCatalog',
-				'name' => 'WordPress Optimization Services',
+				'name' => 'WordPress Speed & Performance Optimization Services',
 				'itemListElement' => array(
 					array(
 						'@type' => 'Offer',
-						'name' => 'Performance Diagnostic',
+						'name' => 'WordPress Speed Optimization & Performance Diagnostic',
 						'price' => '120',
 						'priceCurrency' => 'EUR',
 						'description' => 'Full SQL profiler audit and Core Web Vitals diagnostic, 100% credited toward build.',
 					),
 					array(
 						'@type' => 'Offer',
-						'name' => 'Performance Care Retainer',
+						'name' => 'WordPress Performance Care Retainer',
 						'price' => '240',
 						'priceCurrency' => 'EUR',
 						'description' => 'Monthly 24/7 speed, uptime, and security management with priority SLA.',
 					),
 					array(
 						'@type' => 'Offer',
-						'name' => 'Performance Build',
+						'name' => 'Bespoke WordPress Performance Build',
 						'price' => '1400',
 						'priceCurrency' => 'EUR',
 						'description' => 'Bespoke zero-bloat FSE block theme with WCAG 2.2 AA accessibility and GDPR compliance.',
 					),
 					array(
 						'@type' => 'Offer',
-						'name' => 'E-Commerce Speed Suite',
+						'name' => 'WooCommerce Speed Optimization & Concurrency Suite',
 						'price' => '2100',
 						'priceCurrency' => 'EUR',
 						'description' => 'High-concurrency WooCommerce store build or speed overhaul with Redis and Cloudflare Edge caching.',
@@ -286,7 +286,7 @@ add_action('wp_head', 'wpopt_json_ld_schema');
 function wpopt_document_title($title)
 {
 	if (is_front_page()) {
-		return 'WordPress Optimize — High-Performance WordPress Architecture | EU • Egypt • GCC';
+		return 'WordPress Speed Optimization & Core Web Vitals Engineering | WordPress Optimize';
 	}
 	return $title;
 }
