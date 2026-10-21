@@ -297,38 +297,52 @@ function wpopt_json_ld_schema()
 				'name' => 'Alex Seif',
 				'jobTitle' => 'Principal Systems Engineer & Founder',
 			),
-			'priceRange' => '€120 - €2,100+',
+			'priceRange' => '€70 - €3,500+',
 			'hasOfferCatalog' => array(
 				'@type' => 'OfferCatalog',
 				'name' => 'WordPress Speed & Performance Optimization Services',
 				'itemListElement' => array(
 					array(
 						'@type' => 'Offer',
-						'name' => 'WordPress Speed Optimization & Performance Diagnostic',
-						'price' => '120',
+						'name' => 'Performance & GDPR Readiness Diagnostic',
+						'price' => '140',
 						'priceCurrency' => 'EUR',
-						'description' => 'Full SQL profiler audit and Core Web Vitals diagnostic, 100% credited toward build.',
+						'description' => 'Full SQL profiler audit, Core Web Vitals diagnostic, and GDPR leak scan, 100% credited toward build.',
 					),
 					array(
 						'@type' => 'Offer',
-						'name' => 'WordPress Performance Care Retainer',
-						'price' => '240',
+						'name' => 'Managed WordPress Edge Hosting & Care',
+						'price' => '70',
 						'priceCurrency' => 'EUR',
-						'description' => 'Monthly 24/7 speed, uptime, and security management with priority SLA.',
+						'description' => 'Dedicated NVMe container, isolated PHP-FPM, edge caching, and daily off-site backups.',
 					),
 					array(
 						'@type' => 'Offer',
-						'name' => 'Bespoke WordPress Performance Build',
-						'price' => '1400',
+						'name' => 'Standard WordPress FSE Build',
+						'price' => '980',
 						'priceCurrency' => 'EUR',
-						'description' => 'Bespoke zero-bloat FSE block theme with WCAG 2.2 AA accessibility and GDPR compliance.',
+						'description' => 'Clean, zero-bloat native block theme with True Zero-Cookie Shield and sub-second loads.',
+					),
+					array(
+						'@type' => 'Offer',
+						'name' => 'Bespoke Brand & Performance Build',
+						'price' => '2100',
+						'priceCurrency' => 'EUR',
+						'description' => 'Bespoke zero-bloat FSE theme with WCAG 2.2 AA accessibility and 100/100 Core Web Vitals guarantee.',
 					),
 					array(
 						'@type' => 'Offer',
 						'name' => 'WooCommerce Speed Optimization & Concurrency Suite',
-						'price' => '2100',
+						'price' => '3500',
 						'priceCurrency' => 'EUR',
-						'description' => 'High-concurrency WooCommerce store build or speed overhaul with Redis and Cloudflare Edge caching.',
+						'description' => 'High-concurrency WooCommerce store overhaul with Redis caching and non-blocking checkout.',
+					),
+					array(
+						'@type' => 'Offer',
+						'name' => 'Bespoke AI Enhancements & GEO',
+						'price' => '700',
+						'priceCurrency' => 'EUR',
+						'description' => 'Zero-bloat AI search, customer support RAG bots, and Generative Engine Optimization.',
 					),
 				),
 			),
@@ -349,6 +363,10 @@ function wpopt_document_title($title)
 		return 'WordPress Speed & WooCommerce Performance Services | WordPress Optimize';
 	} elseif (is_page('pricing')) {
 		return 'Transparent Pricing: WordPress Speed & Performance Plans | WordPress Optimize';
+	} elseif (is_page('managed-hosting')) {
+		return 'Managed WordPress Hosting: Edge Caching & Continuous Care | WordPress Optimize';
+	} elseif (is_page('custom-builds')) {
+		return 'Custom WordPress Builds: Zero-Bloat Native FSE | WordPress Optimize';
 	} elseif (is_page('case-studies')) {
 		return 'WordPress & WooCommerce Speed Case Studies | WordPress Optimize';
 	} elseif (is_page('contact')) {
