@@ -22,8 +22,13 @@
                 },
                 {
                     "slug": "accent",
-                    "color": "#2563EB",
-                    "name": "Electric Sapphire"
+                    "color": "#0078D4",
+                    "name": "Edge Electric Blue"
+                },
+                {
+                    "slug": "fluent-cyan",
+                    "color": "#00BCF2",
+                    "name": "Fluent Cyan"
                 },
                 {
                     "slug": "speed-emerald",
@@ -166,7 +171,7 @@
             },
             "button": {
                 "border": {
-                    "radius": "0.5rem"
+                    "radius": "9999px"
                 },
                 "color": {
                     "background": "var(--wp--preset--color--primary)",
@@ -208,6 +213,16 @@
         {
             "name": "page-services",
             "title": "Services Page",
+            "postTypes": ["page"]
+        },
+        {
+            "name": "page-managed-hosting",
+            "title": "Managed Hosting Page",
+            "postTypes": ["page"]
+        },
+        {
+            "name": "page-custom-builds",
+            "title": "Custom Builds Page",
             "postTypes": ["page"]
         },
         {
