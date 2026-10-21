@@ -1,0 +1,354 @@
+// Microsoft Fluent 2 Design System Component Styles
+// Inspired by explore.microsoft.com/en-us/edge/
+
+// 1. Fluent Hero
+.fluent-hero-container {
+    background: linear-gradient(180deg, #D9F0F3 0%, #C4ECF8 20%, #FCFCFC 60%, #FFFFFF 100%);
+    min-height: 85vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 5rem 1.5rem 4rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.fluent-hero-inner {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.fluent-hero-badge {
+    margin-bottom: 1.5rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        box-shadow: 0 8px 24px rgba(0, 120, 212, 0.2);
+    }
+}
+
+.fluent-hero-title {
+    font-size: clamp(2.5rem, 5.5vw, 4.25rem);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    color: #111827;
+    margin: 0 auto 1.5rem;
+    max-width: 950px;
+    text-wrap: balance;
+
+    strong {
+        color: #0078D4;
+        font-weight: 800;
+    }
+}
+
+.fluent-hero-subtitle {
+    font-size: clamp(1.1rem, 2vw, 1.25rem);
+    line-height: 1.65;
+    color: #4B5563;
+    max-width: 800px;
+    margin: 0 auto 2.5rem;
+    text-wrap: balance;
+}
+
+.fluent-hero-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
+
+.fluent-hero-microcopy {
+    font-size: 0.85rem;
+    color: #6B7280;
+    margin: 0 auto 3.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.fluent-showcase-frame {
+    max-width: 1100px;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(0, 0, 0, 0.06);
+    background: #ffffff;
+    transition: transform 0.3s ease;
+
+    &:hover {
+        transform: translateY(-2px);
+    }
+
+    img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+}
+
+// 2. Fluent Pill Buttons
+.fluent-pill-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.875rem 2rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    cursor: pointer;
+
+    &--primary {
+        background-color: #0078D4;
+        color: #ffffff !important;
+        box-shadow: 0 4px 14px rgba(0, 120, 212, 0.3);
+        border: 1px solid transparent;
+
+        &:hover {
+            background-color: #0062A3;
+            transform: translateY(-1px);
+            box-shadow: 0 6px 20px rgba(0, 120, 212, 0.4);
+        }
+    }
+
+    &--secondary {
+        background-color: rgba(255, 255, 255, 0.95);
+        color: #111827 !important;
+        border: 1px solid rgba(0, 0, 0, 0.12);
+        backdrop-filter: blur(8px);
+
+        &:hover {
+            background-color: #ffffff;
+            border-color: rgba(0, 0, 0, 0.25);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+    }
+
+    &--dark {
+        background-color: #111827;
+        color: #ffffff !important;
+
+        &:hover {
+            background-color: #1F2937;
+            transform: translateY(-1px);
+        }
+    }
+}
+
+// 3. Fluent Bento Grid
+.fluent-bento-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 1.5rem;
+    margin: 3rem 0;
+}
+
+.fluent-bento-card {
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    transition: all 0.25s ease;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+        border-color: rgba(0, 120, 212, 0.35);
+    }
+
+    &--span-8 {
+        grid-column: span 8;
+    }
+
+    &--span-4 {
+        grid-column: span 4;
+    }
+
+    &--span-6 {
+        grid-column: span 6;
+    }
+
+    &--span-12 {
+        grid-column: span 12;
+    }
+}
+
+@media (max-width: 900px) {
+    .fluent-bento-card--span-8,
+    .fluent-bento-card--span-4,
+    .fluent-bento-card--span-6 {
+        grid-column: span 12;
+    }
+}
+
+.fluent-card-tag {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    background: rgba(0, 120, 212, 0.1);
+    color: #0078D4;
+    margin-bottom: 1rem;
+}
+
+.fluent-card-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 0.75rem;
+    line-height: 1.25;
+}
+
+.fluent-card-desc {
+    font-size: 0.95rem;
+    color: #4B5563;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.fluent-card-visual {
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #F8FAFC;
+    margin-top: auto;
+
+    img {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 12px;
+    }
+}
+
+// 4. Fluent Header & Navigation
+.fluent-header {
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 0.75rem 2rem;
+    transition: all 0.2s ease;
+}
+
+// 5. Fluent Pricing Cards
+.fluent-pricing-card {
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 20px;
+    padding: 2.5rem 2rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    transition: all 0.25s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+
+    &:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 16px 36px rgba(0, 0, 0, 0.08);
+        border-color: rgba(0, 120, 212, 0.4);
+    }
+
+    &--featured {
+        border: 2px solid #0078D4;
+        box-shadow: 0 8px 30px rgba(0, 120, 212, 0.12);
+    }
+}
+
+.fluent-badge-featured {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #0078D4;
+    color: #ffffff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 0.25rem 1rem;
+    border-radius: 9999px;
+    box-shadow: 0 4px 10px rgba(0, 120, 212, 0.3);
+}
+
+.fluent-price-tag {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #111827;
+    margin: 1rem 0 0.5rem;
+    display: flex;
+    align-items: baseline;
+    gap: 0.25rem;
+
+    .currency {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #0078D4;
+    }
+
+    .period {
+        font-size: 0.95rem;
+        font-weight: 500;
+        color: #6B7280;
+    }
+}
+
+.fluent-feature-list {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0 2rem;
+
+    li {
+        padding: 0.6rem 0;
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        color: #374151;
+        font-size: 0.95rem;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+
+        &:last-child {
+            border-bottom: none;
+        }
+
+        svg, span.check {
+            color: #0078D4;
+            flex-shrink: 0;
+            font-weight: 700;
+        }
+    }
+}
