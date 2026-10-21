@@ -51,6 +51,46 @@ if (!$coaching_page) {
     WP_CLI::line("Updated 'coaching-businesses' case study page template (ID: {$coaching_page->ID})");
 }
 
+// 2b. Ensure Managed Hosting page exists
+$hosting_page = get_page_by_path('managed-hosting');
+if (!$hosting_page) {
+    $hosting_page_id = wp_insert_post(array(
+        'post_title'     => 'Managed WordPress Hosting',
+        'post_name'      => 'managed-hosting',
+        'post_status'    => 'publish',
+        'post_type'      => 'page',
+        'comment_status' => 'closed',
+        'ping_status'    => 'closed',
+    ));
+    if ($hosting_page_id && !is_wp_error($hosting_page_id)) {
+        update_post_meta($hosting_page_id, '_wp_page_template', 'page-managed-hosting');
+        WP_CLI::line("Created 'managed-hosting' page (ID: {$hosting_page_id})");
+    }
+} else {
+    update_post_meta($hosting_page->ID, '_wp_page_template', 'page-managed-hosting');
+    WP_CLI::line("Updated 'managed-hosting' page template (ID: {$hosting_page->ID})");
+}
+
+// 2c. Ensure Custom Builds page exists
+$builds_page = get_page_by_path('custom-builds');
+if (!$builds_page) {
+    $builds_page_id = wp_insert_post(array(
+        'post_title'     => 'Custom WordPress Builds',
+        'post_name'      => 'custom-builds',
+        'post_status'    => 'publish',
+        'post_type'      => 'page',
+        'comment_status' => 'closed',
+        'ping_status'    => 'closed',
+    ));
+    if ($builds_page_id && !is_wp_error($builds_page_id)) {
+        update_post_meta($builds_page_id, '_wp_page_template', 'page-custom-builds');
+        WP_CLI::line("Created 'custom-builds' page (ID: {$builds_page_id})");
+    }
+} else {
+    update_post_meta($builds_page->ID, '_wp_page_template', 'page-custom-builds');
+    WP_CLI::line("Updated 'custom-builds' page template (ID: {$builds_page->ID})");
+}
+
 // 3. Ensure site icon files exist in uploads/2026/09 to prevent 404s
 $uploads_dir = WP_CONTENT_DIR . '/uploads/2026/09';
 if (!file_exists($uploads_dir)) {
@@ -82,10 +122,10 @@ if ($diag_page) {
 			⚡ PERFORMANCE DIAGNOSTIC • 48-HOUR DELIVERY SLA
 		</p>
 		<h1 class="wp-block-heading" style="color:#ffffff;font-size:clamp(2rem, 5vw, 3rem);font-weight:800;letter-spacing:-0.03em;margin:0 0 1.25rem 0">
-			Book Your Performance Diagnostic (€120)
+			Book Your Performance &amp; GDPR Diagnostic (€140)
 		</h1>
 		<p style="color:#94A3B8;font-size:1.15rem;line-height:1.7;margin:0 auto;max-width:700px">
-			Submit your site parameters below. We profile your database queries, TTFB latency, and Core Web Vitals bottlenecks within 48 hours. <strong>100% of the €120 fee is credited toward your subsequent build or retainer.</strong>
+			Submit your site parameters below. We profile your database queries, TTFB latency, Core Web Vitals bottlenecks, and GDPR cookie leaks within 48 hours. <strong>100% of the €140 fee is credited toward your subsequent build or retainer.</strong>
 		</p>
 	</div>
 </div>
