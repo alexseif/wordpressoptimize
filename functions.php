@@ -58,6 +58,18 @@ function wpopt_enqueue_assets()
 		true
 	);
 
+	// Enqueue Fluent flyout navigation scroll controller
+	$nav_script = get_template_directory() . '/assets/js/nav-scroll.js';
+	if (file_exists($nav_script)) {
+		wp_enqueue_script(
+			'wpopt-nav-scroll',
+			get_template_directory_uri() . '/assets/js/nav-scroll.js',
+			array(),
+			filemtime($nav_script),
+			array('strategy' => 'defer', 'in_footer' => true)
+		);
+	}
+
 	// Paddle Billing scripts paused until merchant verification is completed
 	/*
 	wp_enqueue_script(
