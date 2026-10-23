@@ -1,31 +1,33 @@
-<!-- wp:group {"tagName":"header","align":"full","className":"site-header fluent-header","layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between"}} -->
+<!-- wp:group {"tagName":"header","align":"full","className":"site-header fluent-header","layout":{"type":"constrained"}} -->
 <header class="wp-block-group alignfull site-header fluent-header">
-	<!-- wp:group {"className":"header-branding-group","style":{"spacing":{"blockGap":"0.75rem"}},"layout":{"type":"flex","flexWrap":"wrap","verticalAlignment":"center"}} -->
-	<div class="wp-block-group header-branding-group">
-		<!-- wp:site-logo {"width":44,"shouldRenameId":false,"className":"site-logo"} /-->
-		<!-- wp:site-title {"level":0,"style":{"typography":{"fontSize":"1.1rem","fontWeight":"700","letterSpacing":"-0.02em"},"spacing":{"margin":{"bottom":"0"}}}} /-->
-		<!-- wp:html -->
-		<span class="fluent-header-separator" aria-hidden="true"></span>
-		<div class="header-badges" style="display:inline-flex;align-items:center;gap:0.4rem;flex-wrap:wrap">
-			<span style="border-radius:9999px;background-color:#ECFDF5;color:#065F46;padding:0.2rem 0.6rem;font-size:0.7rem;font-weight:700;letter-spacing:0.04em">⚡ 100/100 CWV</span>
-			<span style="border-radius:9999px;background-color:#EFF6FF;color:#1E40AF;padding:0.2rem 0.6rem;font-size:0.7rem;font-weight:700;letter-spacing:0.04em">🔒 ZERO-COOKIE GDPR</span>
-			<span style="border-radius:9999px;background-color:#F5F3FF;color:#6D28D9;padding:0.2rem 0.6rem;font-size:0.7rem;font-weight:700;letter-spacing:0.04em">🤖 AI READY</span>
+	<!-- wp:group {"align":"wide","className":"fluent-header-inner","layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between","verticalAlignment":"center"}} -->
+	<div class="wp-block-group alignwide fluent-header-inner">
+		<!-- wp:group {"className":"header-branding-group","layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center"}} -->
+		<div class="wp-block-group header-branding-group">
+			<!-- wp:site-logo {"width":40,"shouldRenameId":false,"className":"site-logo"} /-->
+			<!-- wp:site-title {"level":0} /-->
 		</div>
-		<!-- /wp:html -->
-	</div>
-	<!-- /wp:group -->
+		<!-- /wp:group -->
 
-	<!-- wp:group {"className":"header-nav-group","style":{"spacing":{"blockGap":"1.5rem"}},"layout":{"type":"flex","flexWrap":"wrap","verticalAlignment":"center"}} -->
-	<div class="wp-block-group header-nav-group">
-		<!-- wp:navigation {"ref":4,"layout":{"type":"flex","setCascadingProperties":true,"justifyContent":"right"}} /-->
+		<!-- wp:group {"className":"header-nav-group","style":{"spacing":{"blockGap":"1.5rem"}},"layout":{"type":"flex","flexWrap":"wrap","verticalAlignment":"center"}} -->
+		<div class="wp-block-group header-nav-group">
+			<!-- wp:navigation {"ref":4,"layout":{"type":"flex","setCascadingProperties":true,"justifyContent":"right"}} /-->
 
-		<!-- wp:buttons -->
-		<div class="wp-block-buttons">
-			<!-- wp:button {"className":"fluent-pill-btn fluent-pill-btn--primary","style":{"typography":{"fontSize":"0.85rem","fontWeight":"600"},"border":{"radius":"9999px"}},"backgroundColor":"accent","textColor":"white"} -->
-			<div class="wp-block-button fluent-pill-btn fluent-pill-btn--primary"><a class="wp-block-button__link has-white-color has-accent-background-color has-text-color has-background wp-element-button" href="/diagnostic-intake/" style="border-radius:9999px;font-size:0.85rem;font-weight:600">Book Diagnostic (€140)</a></div>
-			<!-- /wp:button -->
+			<!-- wp:group {"className":"header-actions","style":{"spacing":{"blockGap":"0.75rem"}},"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center"}} -->
+			<div class="wp-block-group header-actions">
+				<!-- wp:search {"label":"Search","showLabel":false,"buttonUseIcon":true,"buttonPosition":"button-inside","className":"header-search-box"} /-->
+
+				<!-- wp:buttons -->
+				<div class="wp-block-buttons">
+					<!-- wp:button {"className":"fluent-pill-btn fluent-pill-btn--primary"} -->
+					<div class="wp-block-button fluent-pill-btn fluent-pill-btn--primary"><a class="wp-block-button__link wp-element-button" href="/diagnostic-intake/">Book Diagnostic (€140)</a></div>
+					<!-- /wp:button -->
+				</div>
+				<!-- /wp:buttons -->
+			</div>
+			<!-- /wp:group -->
 		</div>
-		<!-- /wp:buttons -->
+		<!-- /wp:group -->
 	</div>
 	<!-- /wp:group -->
 </header>
