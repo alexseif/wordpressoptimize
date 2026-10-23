@@ -400,3 +400,34 @@ function wpopt_document_title($title)
 }
 add_filter('document_title', 'wpopt_document_title');
 
+/**
+ * Render Microsoft Fluent floating flyout sub-navigation past hero
+ */
+function wpopt_render_fluent_flyout_nav() {
+	if (is_admin()) {
+		return;
+	}
+	?>
+	<div class="fluent-flyout-nav" id="fluent-flyout-nav" aria-hidden="true">
+		<div class="fluent-flyout-nav__inner">
+			<a class="fluent-flyout-nav__brand" href="#main-content" aria-label="Scroll to top">
+				<img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/hero_icon.webp'); ?>" alt="WordPress Optimize" width="32" height="32" />
+			</a>
+			<span class="fluent-flyout-nav__divider" aria-hidden="true"></span>
+			<nav class="fluent-flyout-nav__links" aria-label="In-Page Section Navigation">
+				<a href="#why">Architecture</a>
+				<a href="#services">Services</a>
+				<a href="#pricing">Pricing &amp; Hosting</a>
+				<a href="#case-studies">Case Studies</a>
+				<a href="#intake-form">Intake</a>
+			</nav>
+			<span class="fluent-flyout-nav__divider" aria-hidden="true"></span>
+			<a class="fluent-pill-btn fluent-pill-btn--primary fluent-pill-btn--sm" href="/diagnostic-intake/">
+				Book Diagnostic (€140) &rarr;
+			</a>
+		</div>
+	</div>
+	<?php
+}
+add_action('wp_footer', 'wpopt_render_fluent_flyout_nav');
+

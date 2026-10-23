@@ -1,61 +1,32 @@
-<!-- wp:html -->
-<a class="skip-link screen-reader-text" href="#main-content" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:999999;padding:0.75rem 1.5rem;background:#090D16;color:#ffffff;font-weight:700;border-radius:9999px" onfocus="this.style.left='1rem';this.style.top='1rem';this.style.width='auto';this.style.height='auto'" onblur="this.style.left='-9999px';this.style.top='auto';this.style.width='1px';this.style.height='1px'">Skip to main content</a>
-<!-- /wp:html -->
-
-<!-- wp:group {"align":"full","className":"site-header fluent-header","layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between"},"ariaLabel":"Site Header"} -->
-<header class="wp-block-group alignfull site-header fluent-header" role="banner" aria-label="Site Header">
+<!-- wp:group {"tagName":"header","align":"full","className":"site-header fluent-header","layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between"}} -->
+<header class="wp-block-group alignfull site-header fluent-header">
 	<!-- wp:group {"className":"header-branding-group","style":{"spacing":{"blockGap":"0.75rem"}},"layout":{"type":"flex","flexWrap":"wrap","verticalAlignment":"center"}} -->
 	<div class="wp-block-group header-branding-group">
-		<!-- wp:image {"sizeSlug":"full","linkDestination":"custom","className":"is-resized site-logo"} -->
-		<figure class="wp-block-image size-full is-resized site-logo" style="margin:0;flex-shrink:0"><a href="/"><img src="/wp-content/themes/wpopt/assets/img/logo-transparent.png" alt="WordPress Optimize Logo" width="44" height="44" style="border-radius:50%;display:block"/></a></figure>
-		<!-- /wp:image -->
-
+		<!-- wp:site-logo {"width":44,"shouldRenameId":false,"className":"site-logo"} /-->
 		<!-- wp:site-title {"level":0,"style":{"typography":{"fontSize":"1.1rem","fontWeight":"700","letterSpacing":"-0.02em"},"spacing":{"margin":{"bottom":"0"}}}} /-->
-
+		<!-- wp:html -->
 		<span class="fluent-header-separator" aria-hidden="true"></span>
-
-		<div class="header-badges" style="display:flex;align-items:center;gap:0.4rem;flex-wrap:wrap">
+		<div class="header-badges" style="display:inline-flex;align-items:center;gap:0.4rem;flex-wrap:wrap">
 			<span style="border-radius:9999px;background-color:#ECFDF5;color:#065F46;padding:0.2rem 0.6rem;font-size:0.7rem;font-weight:700;letter-spacing:0.04em">⚡ 100/100 CWV</span>
 			<span style="border-radius:9999px;background-color:#EFF6FF;color:#1E40AF;padding:0.2rem 0.6rem;font-size:0.7rem;font-weight:700;letter-spacing:0.04em">🔒 ZERO-COOKIE GDPR</span>
 			<span style="border-radius:9999px;background-color:#F5F3FF;color:#6D28D9;padding:0.2rem 0.6rem;font-size:0.7rem;font-weight:700;letter-spacing:0.04em">🤖 AI READY</span>
 		</div>
+		<!-- /wp:html -->
 	</div>
 	<!-- /wp:group -->
 
-	<!-- wp:group {"className":"header-nav-group","style":{"spacing":{"blockGap":"1.5rem"}},"layout":{"type":"flex","flexWrap":"wrap","verticalAlignment":"center"},"ariaLabel":"Primary Navigation"} -->
-	<nav class="wp-block-group header-nav-group" role="navigation" aria-label="Primary Navigation">
+	<!-- wp:group {"className":"header-nav-group","style":{"spacing":{"blockGap":"1.5rem"}},"layout":{"type":"flex","flexWrap":"wrap","verticalAlignment":"center"}} -->
+	<div class="wp-block-group header-nav-group">
 		<!-- wp:navigation {"ref":4,"layout":{"type":"flex","setCascadingProperties":true,"justifyContent":"right"}} /-->
 
 		<!-- wp:buttons -->
 		<div class="wp-block-buttons">
-			<!-- wp:button {"style":{"color":{"background":"var:preset|color|accent","text":"#ffffff"},"typography":{"fontSize":"0.85rem","fontWeight":"600"},"border":{"radius":"9999px"}}} -->
-			<div class="wp-block-button"><a class="wp-block-button__link has-text-color has-background wp-element-button fluent-pill-btn fluent-pill-btn--primary" href="/diagnostic-intake/" style="border-radius:9999px;font-size:0.85rem;font-weight:600;padding:0.5rem 1.25rem">Book Diagnostic (€140)</a></div>
+			<!-- wp:button {"className":"fluent-pill-btn fluent-pill-btn--primary","style":{"typography":{"fontSize":"0.85rem","fontWeight":"600"},"border":{"radius":"9999px"}},"backgroundColor":"accent","textColor":"white"} -->
+			<div class="wp-block-button fluent-pill-btn fluent-pill-btn--primary"><a class="wp-block-button__link has-white-color has-accent-background-color has-text-color has-background wp-element-button" href="/diagnostic-intake/" style="border-radius:9999px;font-size:0.85rem;font-weight:600">Book Diagnostic (€140)</a></div>
 			<!-- /wp:button -->
 		</div>
 		<!-- /wp:buttons -->
-	</nav>
+	</div>
 	<!-- /wp:group -->
 </header>
 <!-- /wp:group -->
-
-<!-- wp:html -->
-<div class="fluent-flyout-nav" id="fluent-flyout-nav" aria-hidden="true">
-	<div class="fluent-flyout-nav__inner">
-		<a class="fluent-flyout-nav__brand" href="#main-content" aria-label="Scroll to top">
-			<img src="/wp-content/themes/wpopt/assets/img/hero_icon.webp" alt="WordPress Optimize" width="32" height="32" />
-		</a>
-		<span class="fluent-flyout-nav__divider" aria-hidden="true"></span>
-		<nav class="fluent-flyout-nav__links" aria-label="In-Page Section Navigation">
-			<a href="#why">Architecture</a>
-			<a href="#services">Services</a>
-			<a href="#pricing">Pricing &amp; Hosting</a>
-			<a href="#case-studies">Case Studies</a>
-			<a href="#intake-form">Intake</a>
-		</nav>
-		<span class="fluent-flyout-nav__divider" aria-hidden="true"></span>
-		<a class="fluent-pill-btn fluent-pill-btn--primary fluent-pill-btn--sm" href="/diagnostic-intake/">
-			Book Diagnostic (€140) &rarr;
-		</a>
-	</div>
-</div>
-<!-- /wp:html -->
