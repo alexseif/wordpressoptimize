@@ -16,12 +16,19 @@
 }
 
 .fluent-hero-inner {
-    max-width: 1200px;
+    max-width: 1520px;
     width: 100%;
     margin: 0 auto;
+    padding: 0 min(5vw, 40px);
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    @media screen and (max-width: 810px) {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
 }
 
 .fluent-hero-badge {
@@ -83,7 +90,7 @@
 }
 
 .fluent-showcase-frame {
-    max-width: 1100px;
+    max-width: 1380px;
     width: 100%;
     margin: 0 auto;
     position: relative;
@@ -264,8 +271,14 @@
     position: sticky;
     top: 0;
     z-index: 1000;
-    padding: 0.75rem 2rem;
+    padding: 0.75rem max(min(5vw, 40px), calc((100% - 1520px) / 2 + min(5vw, 40px)));
+    box-sizing: border-box;
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
+
+    @media screen and (max-width: 810px) {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
 
     .header-branding-group {
         display: flex;

@@ -30,9 +30,11 @@ html, body {
 		box-sizing: border-box !important;
 	}
 
-	.wp-block-group.is-style-container {
-		padding-left: 1.25rem;
-		padding-right: 1.25rem;
+	.wp-block-group.is-style-container,
+	.fluent-container,
+	.container {
+		padding-left: 24px;
+		padding-right: 24px;
 	}
 
 	// Hero Section Mobile Sizing

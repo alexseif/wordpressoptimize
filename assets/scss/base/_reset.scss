@@ -74,13 +74,27 @@ a {
 	}
 }
 
-// Container
-.wp-block-group.is-style-container {
+// Container (Microsoft Edge Explore Unified Container)
+.wp-block-group.is-style-container,
+.fluent-container,
+.container {
+	width: 100%;
 	max-width: $container-max-width;
 	margin-left: auto;
 	margin-right: auto;
-	padding-left: var(--wp--style--root--padding-left, 1.5rem);
-	padding-right: var(--wp--style--root--padding-right, 1.5rem);
+	padding-left: $container-padding;
+	padding-right: $container-padding;
+	position: relative;
+	box-sizing: border-box;
+}
+
+@media screen and (max-width: 810px) {
+	.wp-block-group.is-style-container,
+	.fluent-container,
+	.container {
+		padding-left: $container-padding-mobile;
+		padding-right: $container-padding-mobile;
+	}
 }
 
 // Reset default block gaps between top-level sections and template parts

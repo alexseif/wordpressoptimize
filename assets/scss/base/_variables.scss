@@ -27,9 +27,10 @@ $spacing-4xl: 8rem;
 $spacing-5xl: 10rem;
 $spacing-6xl: 12rem;
 
-// Container
-$container-max-width: 1200px;
-$container-padding: 1.5rem;
+// Container (Microsoft Edge Explore Unified Container Specification)
+$container-max-width: 1520px;
+$container-padding: min(5vw, 40px);
+$container-padding-mobile: 24px;
 
 // Typography
 $font-family-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
