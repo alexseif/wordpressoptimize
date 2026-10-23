@@ -173,6 +173,46 @@
             },
             "spacingSizes": [
                 {
+                    "slug": "xs",
+                    "size": "0.5rem",
+                    "name": "Extra Small (8px)"
+                },
+                {
+                    "slug": "sm",
+                    "size": "1rem",
+                    "name": "Small (16px)"
+                },
+                {
+                    "slug": "md",
+                    "size": "1.5rem",
+                    "name": "Medium (24px)"
+                },
+                {
+                    "slug": "lg",
+                    "size": "2rem",
+                    "name": "Large (32px)"
+                },
+                {
+                    "slug": "xl",
+                    "size": "2.5rem",
+                    "name": "Extra Large (40px)"
+                },
+                {
+                    "slug": "xxl",
+                    "size": "4rem",
+                    "name": "2X Large (64px)"
+                },
+                {
+                    "slug": "gutter",
+                    "size": "min(5vw, 40px)",
+                    "name": "Edge Gutter (min 5vw, 40px)"
+                },
+                {
+                    "slug": "section",
+                    "size": "clamp(3.5rem, 6vw, 6rem)",
+                    "name": "Section Fluid"
+                },
+                {
                     "slug": "small",
                     "size": "1rem",
                     "name": "Small"
@@ -188,14 +228,23 @@
                     "name": "Large"
                 },
                 {
-                    "slug": "section",
+                    "slug": "section-legacy",
                     "size": "6rem",
-                    "name": "Section"
+                    "name": "Section Legacy"
                 }
             ]
         }
     },
     "styles": {
+        "spacing": {
+            "padding": {
+                "top": "0px",
+                "bottom": "0px",
+                "left": "min(5vw, 40px)",
+                "right": "min(5vw, 40px)"
+            },
+            "blockGap": "1.5rem"
+        },
         "color": {
             "background": "var(--wp--preset--color--background)",
             "text": "var(--wp--preset--color--foreground)"

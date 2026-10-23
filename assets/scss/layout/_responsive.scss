@@ -1,9 +1,11 @@
 @import '../base/variables';
 
-// Root Padding Definitions (WordPress FSE Compatibility)
-:root {
-	--wp--style--root--padding-left: 1.5rem;
-	--wp--style--root--padding-right: 1.5rem;
+// Edge Explore Mobile Gutter Switch (<= 810px)
+@media screen and (max-width: 810px) {
+	:root, body {
+		--wp--style--root--padding-left: 24px !important;
+		--wp--style--root--padding-right: 24px !important;
+	}
 }
 
 // Global Horizontal Overflow Defense
@@ -17,17 +19,6 @@ html, body {
 @media (max-width: $breakpoint-md) {
 	:root {
 		--wp--preset--spacing--section: 3.5rem;
-		--wp--style--root--padding-left: 1.25rem;
-		--wp--style--root--padding-right: 1.25rem;
-	}
-
-	// Ensure all sections have proper horizontal padding and normalized vertical height
-	.wp-block-group.alignfull {
-		padding-top: 3.5rem !important;
-		padding-bottom: 3.5rem !important;
-		padding-left: 1.25rem !important;
-		padding-right: 1.25rem !important;
-		box-sizing: border-box !important;
 	}
 
 	.wp-block-group.is-style-container,
@@ -151,14 +142,7 @@ html, body {
 
 // Small Mobile Viewports (< 640px)
 @media (max-width: $breakpoint-sm) {
-	:root {
-		--wp--style--root--padding-left: 1rem;
-		--wp--style--root--padding-right: 1rem;
-	}
-
 	.site-header {
-		padding-left: 1rem !important;
-		padding-right: 1rem !important;
 		padding-top: 0.5rem !important;
 		padding-bottom: 0.5rem !important;
 
@@ -166,11 +150,6 @@ html, body {
 		.header-nav-group .wp-block-buttons {
 			display: none !important;
 		}
-	}
-
-	.wp-block-group.alignfull {
-		padding-left: 1rem !important;
-		padding-right: 1rem !important;
 	}
 
 	.hero-pill,
