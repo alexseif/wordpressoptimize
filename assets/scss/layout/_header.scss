@@ -138,6 +138,33 @@
 			display: none;
 		}
 	}
+
+	// Microsoft Edge Explore Compact Header CTA Button (32px Pill)
+	.wp-block-button {
+		margin-bottom: 0;
+
+		.wp-block-button__link {
+			font-size: 0.85rem;
+			font-weight: 600;
+			line-height: 1.2;
+			padding: 0.35rem 1rem;
+			min-height: 32px;
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			border-radius: 9999px;
+			background-color: #1A59C8;
+			color: #ffffff !important;
+			white-space: nowrap;
+			transition: background-color 0.15s ease, transform 0.15s ease;
+
+			&:hover {
+				background-color: #14459B;
+				transform: translateY(-1px);
+				color: #ffffff !important;
+			}
+		}
+	}
 }
 
 // Hamburger Open Button

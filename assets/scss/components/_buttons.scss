@@ -1,18 +1,12 @@
 @import '../base/variables';
 
-// Buttons
+// Buttons (Native FSE - theme.json governs sizing, padding, and radii)
 .wp-block-button__link {
-	background-color: $color-primary;
-	color: #FFFFFF;
-	padding: $spacing-md $spacing-lg;
-	border-radius: $radius-md;
 	text-decoration: none;
 	font-weight: $font-weight-medium;
 	display: inline-block;
 	transition: all $transition-base;
 	border: 2px solid transparent;
-	font-size: 1rem;
-	line-height: 1.5;
 	cursor: pointer;
 	box-shadow: $shadow-sm;
 

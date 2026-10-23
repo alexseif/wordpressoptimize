@@ -321,10 +321,10 @@
                 },
                 "spacing": {
                     "padding": {
-                        "top": "0.5rem",
-                        "bottom": "0.5rem",
-                        "left": "1.25rem",
-                        "right": "1.25rem"
+                        "top": "0.35rem",
+                        "bottom": "0.35rem",
+                        "left": "1rem",
+                        "right": "1rem"
                     }
                 }
             },
