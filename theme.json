@@ -17,33 +17,53 @@
             "palette": [
                 {
                     "slug": "primary",
-                    "color": "#090D16",
-                    "name": "Deep Carbon"
+                    "color": "#1A1A1A",
+                    "name": "Edge Charcoal"
                 },
                 {
                     "slug": "accent",
-                    "color": "#0078D4",
-                    "name": "Edge Electric Blue"
+                    "color": "#1A59C8",
+                    "name": "Edge Precision Blue"
                 },
                 {
-                    "slug": "fluent-cyan",
-                    "color": "#00BCF2",
-                    "name": "Fluent Cyan"
+                    "slug": "accent-hover",
+                    "color": "#14459B",
+                    "name": "Edge Hover Blue"
+                },
+                {
+                    "slug": "edge-brightblue",
+                    "color": "#008DFF",
+                    "name": "Edge Bright Blue"
+                },
+                {
+                    "slug": "edge-cyan",
+                    "color": "#82DDFD",
+                    "name": "Edge Soft Cyan"
+                },
+                {
+                    "slug": "edge-purple",
+                    "color": "#6A0DD4",
+                    "name": "Copilot AI Purple"
                 },
                 {
                     "slug": "speed-emerald",
-                    "color": "#10B981",
-                    "name": "Speed Emerald"
+                    "color": "#0AD88F",
+                    "name": "Edge Speed Green"
+                },
+                {
+                    "slug": "edge-yellow",
+                    "color": "#FEC846",
+                    "name": "Edge Yellow"
                 },
                 {
                     "slug": "background",
                     "color": "#FFFFFF",
-                    "name": "Background"
+                    "name": "Pure White"
                 },
                 {
                     "slug": "background-alt",
-                    "color": "#F8FAFC",
-                    "name": "Background Alt"
+                    "color": "#F2F2F2",
+                    "name": "Edge Light Gray"
                 },
                 {
                     "slug": "card-surface",
@@ -52,18 +72,40 @@
                 },
                 {
                     "slug": "border-subtle",
-                    "color": "#E2E8F0",
+                    "color": "#E5E7EB",
                     "name": "Border Subtle"
                 },
                 {
                     "slug": "foreground",
-                    "color": "#090D16",
-                    "name": "Foreground"
+                    "color": "#1A1A1A",
+                    "name": "Foreground Text"
                 },
                 {
                     "slug": "foreground-light",
-                    "color": "#64748B",
-                    "name": "Foreground Light"
+                    "color": "#5A5A5A",
+                    "name": "Neutral Body Text"
+                }
+            ],
+            "gradients": [
+                {
+                    "slug": "edge-hero-gradient",
+                    "gradient": "linear-gradient(180deg, #D9F0F3 0%, #C4ECF8 20%, #FCFCFC 60%, #FFFFFF 100%)",
+                    "name": "Edge Hero Gradient"
+                },
+                {
+                    "slug": "edge-ai-gradient",
+                    "gradient": "linear-gradient(90deg, #BA99FF 0%, #ABD8FF 50%, #8BFAEB 100%)",
+                    "name": "Copilot AI Gradient"
+                },
+                {
+                    "slug": "edge-vibrant-gradient",
+                    "gradient": "linear-gradient(90deg, #7209D4 0%, #2832D4 33%, #00A5B2 100%)",
+                    "name": "Edge Vibrant Gradient"
+                },
+                {
+                    "slug": "edge-section-grad",
+                    "gradient": "linear-gradient(103deg, #F5F6FF 10%, #DFF4FB 100%)",
+                    "name": "Edge Soft Section Gradient"
                 }
             ]
         },
