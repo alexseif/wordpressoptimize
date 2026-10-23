@@ -34,7 +34,7 @@
         width: 56px;
         height: 56px;
         border-radius: 50%;
-        box-shadow: 0 8px 24px rgba(0, 120, 212, 0.2);
+        box-shadow: 0 8px 24px rgba(26, 89, 200, 0.2);
     }
 }
 
@@ -43,13 +43,13 @@
     font-weight: 800;
     line-height: 1.1;
     letter-spacing: -0.03em;
-    color: #111827;
+    color: #1A1A1A;
     margin: 0 auto 1.5rem;
     max-width: 950px;
     text-wrap: balance;
 
     strong {
-        color: #0078D4;
+        color: #1A59C8;
         font-weight: 800;
     }
 }
@@ -57,7 +57,7 @@
 .fluent-hero-subtitle {
     font-size: clamp(1.1rem, 2vw, 1.25rem);
     line-height: 1.65;
-    color: #4B5563;
+    color: #5A5A5A;
     max-width: 800px;
     margin: 0 auto 2.5rem;
     text-wrap: balance;
@@ -119,38 +119,42 @@
     cursor: pointer;
 
     &--primary {
-        background-color: #0078D4;
+        background-color: #1A59C8;
         color: #ffffff !important;
-        box-shadow: 0 4px 14px rgba(0, 120, 212, 0.3);
+        box-shadow: 0 4px 14px rgba(26, 89, 200, 0.3);
         border: 1px solid transparent;
 
         &:hover {
-            background-color: #0062A3;
+            background-color: #14459B;
             transform: translateY(-1px);
-            box-shadow: 0 6px 20px rgba(0, 120, 212, 0.4);
+            box-shadow: 0 6px 20px rgba(26, 89, 200, 0.4);
+        }
+
+        &:active {
+            background-color: #0E316E;
         }
     }
 
     &--secondary {
         background-color: rgba(255, 255, 255, 0.95);
-        color: #111827 !important;
+        color: #1A1A1A !important;
         border: 1px solid rgba(0, 0, 0, 0.12);
         backdrop-filter: blur(8px);
 
         &:hover {
             background-color: #ffffff;
-            border-color: rgba(0, 0, 0, 0.25);
+            border-color: rgba(26, 89, 200, 0.35);
             transform: translateY(-1px);
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
         }
     }
 
     &--dark {
-        background-color: #111827;
+        background-color: #1A1A1A;
         color: #ffffff !important;
 
         &:hover {
-            background-color: #1F2937;
+            background-color: #343434;
             transform: translateY(-1px);
         }
     }
@@ -180,7 +184,7 @@
     &:hover {
         transform: translateY(-3px);
         box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
-        border-color: rgba(0, 120, 212, 0.35);
+        border-color: rgba(26, 89, 200, 0.35);
     }
 
     &--span-8 {
@@ -216,22 +220,22 @@
     letter-spacing: 0.05em;
     padding: 0.25rem 0.75rem;
     border-radius: 9999px;
-    background: rgba(0, 120, 212, 0.1);
-    color: #0078D4;
+    background: rgba(26, 89, 200, 0.1);
+    color: #1A59C8;
     margin-bottom: 1rem;
 }
 
 .fluent-card-title {
     font-size: 1.5rem;
     font-weight: 700;
-    color: #111827;
+    color: #1A1A1A;
     margin-bottom: 0.75rem;
     line-height: 1.25;
 }
 
 .fluent-card-desc {
     font-size: 0.95rem;
-    color: #4B5563;
+    color: #5A5A5A;
     line-height: 1.6;
     margin-bottom: 1.5rem;
 }
@@ -286,7 +290,7 @@
         .wp-block-navigation-item a {
             font-size: 0.9rem;
             font-weight: 600;
-            color: #1F2937;
+            color: #1A1A1A;
             padding: 0.5rem 0.75rem;
             border-radius: 9999px;
             transition: all 0.15s ease;
@@ -294,7 +298,7 @@
 
             &:hover {
                 background: rgba(0, 0, 0, 0.04);
-                color: #0078D4;
+                color: #1A59C8;
             }
         }
     }
@@ -367,19 +371,19 @@
             border-radius: 9999px;
             font-size: 0.85rem;
             font-weight: 600;
-            color: #374151;
+            color: #1A1A1A;
             text-decoration: none;
             transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
             white-space: nowrap;
 
             &:hover {
-                background: rgba(0, 120, 212, 0.08);
-                color: #0078D4;
+                background: rgba(26, 89, 200, 0.08);
+                color: #1A59C8;
             }
 
             &.active {
-                background: rgba(0, 120, 212, 0.12);
-                color: #0078D4;
+                background: rgba(26, 89, 200, 0.12);
+                color: #1A59C8;
                 font-weight: 700;
             }
         }
@@ -390,6 +394,11 @@
         font-size: 0.825rem;
         font-weight: 700;
         white-space: nowrap;
+        background-color: #1A59C8;
+
+        &:hover {
+            background-color: #14459B;
+        }
     }
 }
 
@@ -420,12 +429,12 @@
     &:hover {
         transform: translateY(-4px);
         box-shadow: 0 16px 36px rgba(0, 0, 0, 0.08);
-        border-color: rgba(0, 120, 212, 0.4);
+        border-color: rgba(26, 89, 200, 0.4);
     }
 
     &--featured {
-        border: 2px solid #0078D4;
-        box-shadow: 0 8px 30px rgba(0, 120, 212, 0.12);
+        border: 2px solid #1A59C8;
+        box-shadow: 0 8px 30px rgba(26, 89, 200, 0.12);
     }
 }
 
@@ -434,7 +443,7 @@
     top: -12px;
     left: 50%;
     transform: translateX(-50%);
-    background: #0078D4;
+    background: #1A59C8;
     color: #ffffff;
     font-size: 0.75rem;
     font-weight: 700;
@@ -442,13 +451,13 @@
     text-transform: uppercase;
     padding: 0.25rem 1rem;
     border-radius: 9999px;
-    box-shadow: 0 4px 10px rgba(0, 120, 212, 0.3);
+    box-shadow: 0 4px 10px rgba(26, 89, 200, 0.3);
 }
 
 .fluent-price-tag {
     font-size: 2.5rem;
     font-weight: 800;
-    color: #111827;
+    color: #1A1A1A;
     margin: 1rem 0 0.5rem;
     display: flex;
     align-items: baseline;
@@ -457,13 +466,13 @@
     .currency {
         font-size: 1.5rem;
         font-weight: 700;
-        color: #0078D4;
+        color: #1A59C8;
     }
 
     .period {
         font-size: 0.95rem;
         font-weight: 500;
-        color: #6B7280;
+        color: #5A5A5A;
     }
 }
 
@@ -486,7 +495,7 @@
         }
 
         svg, span.check {
-            color: #0078D4;
+            color: #0AD88F;
             flex-shrink: 0;
             font-weight: 700;
         }
