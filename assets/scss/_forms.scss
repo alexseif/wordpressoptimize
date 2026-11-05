@@ -112,8 +112,7 @@
 }
 
 // Form Container Enhancement
-.intake-form-container,
-.wp-block-group:has(.wpcf7) {
+.intake-form-container {
 	background: linear-gradient(135deg, $color-background-alt 0%, $color-background 100%);
 	padding: $spacing-4xl $spacing-lg;
 	border-radius: $radius-xl;

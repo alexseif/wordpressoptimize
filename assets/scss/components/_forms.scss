@@ -131,19 +131,16 @@
 	}
 }
 
-// Form Container Enhancement
-.intake-form-container,
-.wp-block-group:has(.wpcf7) {
+// Form Card Enhancement
+.intake-form-container {
 	background: #FFFFFF;
 	padding: 2.5rem 2rem;
 	border-radius: $radius-xl;
 	position: relative;
 	box-shadow: $shadow-md;
 	border: 1px solid var(--wp--preset--color--border-subtle, #E2E8F0);
-	max-width: 680px;
-	margin-left: auto;
-	margin-right: auto;
 	box-sizing: border-box;
+	width: 100%;
 
 	@media (max-width: $breakpoint-md) {
 		padding: 1.25rem 1rem !important;
