@@ -30,6 +30,12 @@ function wpopt_setup()
 	add_theme_support('align-wide');
 	add_theme_support('editor-font-sizes', array());
 	add_theme_support('editor-color-palette', array());
+
+	// Register Narrow Container Block Style for core/group
+	register_block_style('core/group', array(
+		'name'  => 'narrow',
+		'label' => __('Narrow Container', 'wpopt'),
+	));
 }
 add_action('after_setup_theme', 'wpopt_setup');
 

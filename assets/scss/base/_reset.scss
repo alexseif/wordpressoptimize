@@ -96,6 +96,27 @@ a {
 	}
 }
 
+// Narrow Container Block Style
+.wp-block-group.is-style-narrow,
+.container-narrow {
+	width: 100%;
+	max-width: 768px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: $container-padding;
+	padding-right: $container-padding;
+	position: relative;
+	box-sizing: border-box;
+}
+
+@media screen and (max-width: 810px) {
+	.wp-block-group.is-style-narrow,
+	.container-narrow {
+		padding-left: $container-padding-mobile;
+		padding-right: $container-padding-mobile;
+	}
+}
+
 // Reset default block gaps between top-level sections and template parts
 .wp-site-blocks > * {
 	margin-block-start: 0 !important;
