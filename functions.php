@@ -195,7 +195,7 @@ function wpopt_create_pages_on_activation()
 		),
 		'diagnostic-intake' => array(
 			'title' => 'Diagnostic Kickoff & Intake',
-			'template' => 'default',
+			'template' => 'page-diagnostic-intake',
 		),
 		'woocommerce-speed-optimization' => array(
 			'title' => 'WooCommerce Speed Optimization',
