@@ -139,29 +139,35 @@
 		}
 	}
 
-	// Microsoft Edge Explore Compact Header CTA Button (32px Pill)
+	// Header CTA Button (Exact Scrolling Header Pill Style & Size)
 	.wp-block-button {
 		margin-bottom: 0;
 
 		.wp-block-button__link {
-			font-size: 0.85rem;
-			font-weight: 600;
-			line-height: 1.2;
-			padding: 0.35rem 1rem;
-			min-height: 32px;
+			padding: 0.45rem 1.15rem;
+			font-size: 0.825rem;
+			font-weight: 700;
+			white-space: nowrap;
 			display: inline-flex;
 			align-items: center;
 			justify-content: center;
+			gap: 0.5rem;
 			border-radius: 9999px;
 			background-color: #1A59C8;
 			color: #ffffff !important;
-			white-space: nowrap;
-			transition: background-color 0.15s ease, transform 0.15s ease;
+			box-shadow: 0 4px 14px rgba(26, 89, 200, 0.3);
+			border: 1px solid transparent;
+			transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 
 			&:hover {
 				background-color: #14459B;
 				transform: translateY(-1px);
+				box-shadow: 0 6px 20px rgba(26, 89, 200, 0.4);
 				color: #ffffff !important;
+			}
+
+			&:active {
+				background-color: #0E316E;
 			}
 		}
 	}
