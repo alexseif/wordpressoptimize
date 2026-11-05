@@ -91,6 +91,26 @@ if (!$builds_page) {
     WP_CLI::line("Updated 'custom-builds' page template (ID: {$builds_page->ID})");
 }
 
+// 2d. Ensure Sandcastles Performance Pack page exists
+$plugin_page = get_page_by_path('sandcastles-performance-pack');
+if (!$plugin_page) {
+    $plugin_page_id = wp_insert_post(array(
+        'post_title'     => 'Sandcastles Performance Pack',
+        'post_name'      => 'sandcastles-performance-pack',
+        'post_status'    => 'publish',
+        'post_type'      => 'page',
+        'comment_status' => 'closed',
+        'ping_status'    => 'closed',
+    ));
+    if ($plugin_page_id && !is_wp_error($plugin_page_id)) {
+        update_post_meta($plugin_page_id, '_wp_page_template', 'page-sandcastles-performance-pack');
+        WP_CLI::line("Created 'sandcastles-performance-pack' page (ID: {$plugin_page_id})");
+    }
+} else {
+    update_post_meta($plugin_page->ID, '_wp_page_template', 'page-sandcastles-performance-pack');
+    WP_CLI::line("Updated 'sandcastles-performance-pack' page template (ID: {$plugin_page->ID})");
+}
+
 // 3. Ensure site icon files exist in uploads/2026/09 to prevent 404s
 $uploads_dir = WP_CONTENT_DIR . '/uploads/2026/09';
 if (!file_exists($uploads_dir)) {
