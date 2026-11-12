@@ -89,10 +89,8 @@
     width: 100%;
     margin: 0 auto;
     position: relative;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(0, 0, 0, 0.06);
-    background: #ffffff;
+    background: transparent;
+    box-shadow: none;
     transition: transform 0.3s ease;
 
     &:hover {
