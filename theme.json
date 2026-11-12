@@ -380,6 +380,16 @@
             "name": "page-diagnostic-intake",
             "title": "Diagnostic Kickoff & Intake Page",
             "postTypes": ["page"]
+        },
+        {
+            "name": "page-technical-architecture",
+            "title": "Technical Architecture & Engineering Page",
+            "postTypes": ["page"]
+        },
+        {
+            "name": "page-practitioners",
+            "title": "Practitioners & Coaches Platform Page",
+            "postTypes": ["page"]
         }
     ],
     "templateParts": {

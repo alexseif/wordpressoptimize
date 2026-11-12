@@ -204,3 +204,23 @@ if ($diag_page) {
     update_post_meta($diag_page->ID, '_wp_page_template', 'page-diagnostic-intake');
     WP_CLI::line("Updated 'diagnostic-intake' page content and template (ID: {$diag_page->ID})");
 }
+
+// 6. Ensure Technical Architecture page exists
+$tech_page = get_page_by_path('technical-architecture');
+if (!$tech_page) {
+    $tech_page_id = wp_insert_post(array(
+        'post_title'     => 'WordPress Technical Performance Architecture & Engineering',
+        'post_name'      => 'technical-architecture',
+        'post_status'    => 'publish',
+        'post_type'      => 'page',
+        'comment_status' => 'closed',
+        'ping_status'    => 'closed',
+    ));
+    if ($tech_page_id && !is_wp_error($tech_page_id)) {
+        update_post_meta($tech_page_id, '_wp_page_template', 'page-technical-architecture');
+        WP_CLI::line("Created 'technical-architecture' page (ID: {$tech_page_id})");
+    }
+} else {
+    update_post_meta($tech_page->ID, '_wp_page_template', 'page-technical-architecture');
+    WP_CLI::line("Updated 'technical-architecture' page template (ID: {$tech_page->ID})");
+}
