@@ -274,6 +274,9 @@ function wpopt_seo_meta()
 	} elseif (is_page('coaching-businesses')) {
 		$description = 'How we achieved sub-second Core Web Vitals for an executive coaching & membership platform: -89% TTFB, zero CLS video embeds, and +41% consultation booking conversion.';
 		$keywords = 'coaching business website, coach business website speed, learndash speed optimization, membership site speed wordpress, wordpress video funnels speed';
+	} elseif (is_page('practitioners')) {
+		$description = 'Key Person of Influence digital platform architecture for life coaches, holistic healers, shamans, and transformational guides across the UK, EU, and GCC. Zero-cookie sanctuary, automated discovery booking, and high-ticket positioning.';
+		$keywords = 'coaching website architecture, holistic healer website, shaman website design, key person of influence practitioners, life coach website uk, holistic mentor website eu, coach website dubai gcc, calm wordpress design';
 	}
 
 	$title = wp_get_document_title();
@@ -366,6 +369,32 @@ function wpopt_json_ld_schema()
 			),
 		);
 		echo '<script type="application/ld+json">' . wp_json_encode($schema, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT) . '</script>' . "\n";
+	} elseif (is_page('practitioners')) {
+		$schema = array(
+			'@context' => 'https://schema.org',
+			'@type' => 'ProfessionalService',
+			'name' => 'WordPress Architecture for Coaches & Practitioners',
+			'description' => 'Key Person of Influence digital platform architecture for life coaches, holistic healers, shamans, and transformational guides across the UK, EU, and GCC.',
+			'url' => home_url('/practitioners/'),
+			'areaServed' => array(
+				array('@type' => 'Country', 'name' => 'United Kingdom'),
+				array('@type' => 'AdministrativeArea', 'name' => 'European Union'),
+				array('@type' => 'Country', 'name' => 'United Arab Emirates'),
+				array('@type' => 'Country', 'name' => 'Egypt'),
+				array('@type' => 'AdministrativeArea', 'name' => 'Gulf Cooperation Council'),
+			),
+			'audience' => array(
+				'@type' => 'Audience',
+				'audienceType' => 'Life Coaches, Holistic Healers, Shamans, Transformational Guides, and Mentors',
+			),
+			'founder' => array(
+				'@type' => 'Person',
+				'name' => 'Alex Seif',
+				'jobTitle' => 'Principal Systems Engineer & Founder',
+			),
+			'priceRange' => '€120 - €3,500+',
+		);
+		echo '<script type="application/ld+json">' . wp_json_encode($schema, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT) . '</script>' . "\n";
 	}
 }
 add_action('wp_head', 'wpopt_json_ld_schema');
@@ -401,6 +430,8 @@ function wpopt_document_title($title)
 		return 'WooCommerce Speed Optimization: High-Concurrency Engineering | WordPress Optimize';
 	} elseif (is_page('coaching-businesses')) {
 		return 'Case Study: High-Traffic Coaching Platform Performance | WordPress Optimize';
+	} elseif (is_page('practitioners')) {
+		return 'WordPress Architecture for Coaches & Practitioners: Key Person of Influence | WordPress Optimize';
 	}
 	return $title;
 }
