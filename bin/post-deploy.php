@@ -244,3 +244,9 @@ if (!$prac_page) {
     update_post_meta($prac_page->ID, '_wp_page_template', 'page-practitioners');
     WP_CLI::line("Updated 'practitioners' page template (ID: {$prac_page->ID})");
 }
+
+// 8. Ensure Sandcastles Schema FAQ plugin is active
+if (!is_plugin_active('sandcastles-schema-faq/sandcastles-schema-faq.php') && file_exists(WP_PLUGIN_DIR . '/sandcastles-schema-faq/sandcastles-schema-faq.php')) {
+    activate_plugin('sandcastles-schema-faq/sandcastles-schema-faq.php');
+    WP_CLI::line("Activated 'sandcastles-schema-faq' plugin");
+}
